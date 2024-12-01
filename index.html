@@ -1,559 +1,1051 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Ke Xue @ LAMDA</title>
-<link rel="alternate" title="Yang Yu" href="http://cs.nju.edu.cn/yuy/RSS.aspx" type="application/rss+xml">
-<link rel="stylesheet" media="print" href="xuek%20@%20LAMDA_files/Print_Styles.css" type="text/css">
-<link rel="stylesheet" media="screen" href="xuek%20@%20LAMDA_files/Screen_Styles.css" type="text/css">
-<link rel="shortcut icon" href="https://www.lamda.nju.edu.cn/HSEA22/Themes/Default/Icon.ico" type="image/x-icon">
-<script type="text/javascript" src="xuek%20@%20LAMDA_files/jquery.js"></script>
-<script type="text/javascript" src="xuek%20@%20LAMDA_files/Scripts1.js"></script>
-<style>
-h1 {
-color: #880000;
-font-weight: 600;
-}
-</style><style type="text/css"></style><style>@-moz-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@-webkit-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@-o-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}embed,object{animation-duration:.001s;-ms-animation-duration:.001s;-moz-animation-duration:.001s;-webkit-animation-duration:.001s;-o-animation-duration:.001s;animation-name:nodeInserted;-ms-animation-name:nodeInserted;-moz-animation-name:nodeInserted;-webkit-animation-name:nodeInserted;-o-animation-name:nodeInserted;}</style><style class="firebugResetStyles" type="text/css" charset="utf-8">/* See license.txt for terms of usage */
-/** reset styling **/
-.firebugResetStyles {
-    z-index: 2147483646 !important;
-    top: 0 !important;
-    left: 0 !important;
-    display: block !important;
-    border: 0 none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    outline: 0 !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    position: fixed !important;
-    transform: rotate(0deg) !important;
-    transform-origin: 50% 50% !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    background: transparent none !important;
-    pointer-events: none !important;
-    white-space: normal !important;
-}
-style.firebugResetStyles {
-    display: none !important;
-}
-
-.firebugBlockBackgroundColor {
-    background-color: transparent !important;
-}
-
-.firebugResetStyles:before, .firebugResetStyles:after {
-    content: "" !important;
-}
-/**actual styling to be modified by firebug theme**/
-.firebugCanvas {
-    display: none !important;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-.firebugLayoutBox {
-    width: auto !important;
-    position: static !important;
-}
-
-.firebugLayoutBoxOffset {
-    opacity: 0.8 !important;
-    position: fixed !important;
-}
-
-.firebugLayoutLine {
-    opacity: 0.4 !important;
-    background-color: #000000 !important;
-}
-
-.firebugLayoutLineLeft, .firebugLayoutLineRight {
-    width: 1px !important;
-    height: 100% !important;
-}
-
-.firebugLayoutLineTop, .firebugLayoutLineBottom {
-    width: 100% !important;
-    height: 1px !important;
-}
-
-.firebugLayoutLineTop {
-    margin-top: -1px !important;
-    border-top: 1px solid #999999 !important;
-}
-
-.firebugLayoutLineRight {
-    border-right: 1px solid #999999 !important;
-}
-
-.firebugLayoutLineBottom {
-    border-bottom: 1px solid #999999 !important;
-}
-
-.firebugLayoutLineLeft {
-    margin-left: -1px !important;
-    border-left: 1px solid #999999 !important;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-.firebugLayoutBoxParent {
-    border-top: 0 none !important;
-    border-right: 1px dashed #E00 !important;
-    border-bottom: 1px dashed #E00 !important;
-    border-left: 0 none !important;
-    position: fixed !important;
-    width: auto !important;
-}
-
-.firebugRuler{
-    position: absolute !important;
-}
-
-.firebugRulerH {
-    top: -15px !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 14px !important;
-    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%13%88%00%00%00%0E%08%02%00%00%00L%25a%0A%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%04%F8IDATx%DA%EC%DD%D1n%E2%3A%00E%D1%80%F8%FF%EF%E2%AF2%95%D0D4%0E%C1%14%B0%8Fa-%E9%3E%CC%9C%87n%B9%81%A6W0%1C%A6i%9A%E7y%0As8%1CT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AATE9%FE%FCw%3E%9F%AF%2B%2F%BA%97%FDT%1D~K(%5C%9D%D5%EA%1B%5C%86%B5%A9%BDU%B5y%80%ED%AB*%03%FAV9%AB%E1%CEj%E7%82%EF%FB%18%BC%AEJ8%AB%FA'%D2%BEU9%D7U%ECc0%E1%A2r%5DynwVi%CFW%7F%BB%17%7Dy%EACU%CD%0E%F0%FA%3BX%FEbV%FEM%9B%2B%AD%BE%AA%E5%95v%AB%AA%E3E5%DCu%15rV9%07%B5%7F%B5w%FCm%BA%BE%AA%FBY%3D%14%F0%EE%C7%60%0EU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5JU%88%D3%F5%1F%AE%DF%3B%1B%F2%3E%DAUCNa%F92%D02%AC%7Dm%F9%3A%D4%F2%8B6%AE*%BF%5C%C2Ym~9g5%D0Y%95%17%7C%C8c%B0%7C%18%26%9CU%CD%13i%F7%AA%90%B3Z%7D%95%B4%C7%60%E6E%B5%BC%05%B4%FBY%95U%9E%DB%FD%1C%FC%E0%9F%83%7F%BE%17%7DkjMU%E3%03%AC%7CWj%DF%83%9An%BCG%AE%F1%95%96yQ%0Dq%5Dy%00%3Et%B5'%FC6%5DS%95pV%95%01%81%FF'%07%00%00%00%00%00%00%00%00%00%F8x%C7%F0%BE%9COp%5D%C9%7C%AD%E7%E6%EBV%FB%1E%E0(%07%E5%AC%C6%3A%ABi%9C%8F%C6%0E9%AB%C0'%D2%8E%9F%F99%D0E%B5%99%14%F5%0D%CD%7F%24%C6%DEH%B8%E9rV%DFs%DB%D0%F7%00k%FE%1D%84%84%83J%B8%E3%BA%FB%EF%20%84%1C%D7%AD%B0%8E%D7U%C8Y%05%1E%D4t%EF%AD%95Q%BF8w%BF%E9%0A%BF%EB%03%00%00%00%00%00%00%00%00%00%B8vJ%8E%BB%F5%B1u%8Cx%80%E1o%5E%CA9%AB%CB%CB%8E%03%DF%1D%B7T%25%9C%D5(%EFJM8%AB%CC'%D2%B2*%A4s%E7c6%FB%3E%FA%A2%1E%80~%0E%3E%DA%10x%5D%95Uig%15u%15%ED%7C%14%B6%87%A1%3B%FCo8%A8%D8o%D3%ADO%01%EDx%83%1A~%1B%9FpP%A3%DC%C6'%9C%95gK%00%00%00%00%00%00%00%00%00%20%D9%C9%11%D0%C0%40%AF%3F%EE%EE%92%94%D6%16X%B5%BCMH%15%2F%BF%D4%A7%C87%F1%8E%F2%81%AE%AAvzr%DA2%ABV%17%7C%E63%83%E7I%DC%C6%0Bs%1B%EF6%1E%00%00%00%00%00%00%00%00%00%80cr%9CW%FF%7F%C6%01%0E%F1%CE%A5%84%B3%CA%BC%E0%CB%AA%84%CE%F9%BF)%EC%13%08WU%AE%AB%B1%AE%2BO%EC%8E%CBYe%FE%8CN%ABr%5Dy%60~%CFA%0D%F4%AE%D4%BE%C75%CA%EDVB%EA(%B7%F1%09g%E5%D9%12%00%00%00%00%00%00%00%00%00H%F6%EB%13S%E7y%5E%5E%FB%98%F0%22%D1%B2'%A7%F0%92%B1%BC%24z3%AC%7Dm%60%D5%92%B4%7CEUO%5E%F0%AA*%3BU%B9%AE%3E%A0j%94%07%A0%C7%A0%AB%FD%B5%3F%A0%F7%03T%3Dy%D7%F7%D6%D4%C0%AAU%D2%E6%DFt%3F%A8%CC%AA%F2%86%B9%D7%F5%1F%18%E6%01%F8%CC%D5%9E%F0%F3z%88%AA%90%EF%20%00%00%00%00%00%00%00%00%00%C0%A6%D3%EA%CFi%AFb%2C%7BB%0A%2B%C3%1A%D7%06V%D5%07%A8r%5D%3D%D9%A6%CAu%F5%25%CF%A2%99%97zNX%60%95%AB%5DUZ%D5%FBR%03%AB%1C%D4k%9F%3F%BB%5C%FF%81a%AE%AB'%7F%F3%EA%FE%F3z%94%AA%D8%DF%5B%01%00%00%00%00%00%00%00%00%00%8E%FB%F3%F2%B1%1B%8DWU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*UiU%C7%BBe%E7%F3%B9%CB%AAJ%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5*%AAj%FD%C6%D4%5Eo%90%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5%86%AF%1B%9F%98%DA%EBm%BBV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%AD%D6%E4%F58%01%00%00%00%00%00%00%00%00%00%00%00%00%00%40%85%7F%02%0C%008%C2%D0H%16j%8FX%00%00%00%00IEND%AEB%60%82") repeat-x !important;
-    border-top: 1px solid #BBBBBB !important;
-    border-right: 1px dashed #BBBBBB !important;
-    border-bottom: 1px solid #000000 !important;
-}
-
-.firebugRulerV {
-    top: 0 !important;
-    left: -15px !important;
-    width: 14px !important;
-    height: 100% !important;
-    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%0E%00%00%13%88%08%02%00%00%00%0E%F5%CB%10%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%06~IDATx%DA%EC%DD%D1v%A20%14%40Qt%F1%FF%FF%E4%97%D9%07%3BT%19%92%DC%40(%90%EEy%9A5%CB%B6%E8%F6%9Ac%A4%CC0%84%FF%DC%9E%CF%E7%E3%F1%88%DE4%F8%5D%C7%9F%2F%BA%DD%5E%7FI%7D%F18%DDn%BA%C5%FB%DF%97%BFk%F2%10%FF%FD%B4%F2M%A7%FB%FD%FD%B3%22%07p%8F%3F%AE%E3%F4S%8A%8F%40%EEq%9D%BE8D%F0%0EY%A1Uq%B7%EA%1F%81%88V%E8X%3F%B4%CEy%B7h%D1%A2E%EBohU%FC%D9%AF2fO%8BBeD%BE%F7X%0C%97%A4%D6b7%2Ck%A5%12%E3%9B%60v%B7r%C7%1AI%8C%BD%2B%23r%00c0%B2v%9B%AD%CA%26%0C%1Ek%05A%FD%93%D0%2B%A1u%8B%16-%95q%5Ce%DCSO%8E%E4M%23%8B%F7%C2%FE%40%BB%BD%8C%FC%8A%B5V%EBu%40%F9%3B%A72%FA%AE%8C%D4%01%CC%B5%DA%13%9CB%AB%E2I%18%24%B0n%A9%0CZ*Ce%9C%A22%8E%D8NJ%1E%EB%FF%8F%AE%CAP%19*%C3%BAEKe%AC%D1%AAX%8C*%DEH%8F%C5W%A1e%AD%D4%B7%5C%5B%19%C5%DB%0D%EF%9F%19%1D%7B%5E%86%BD%0C%95%A12%AC%5B*%83%96%CAP%19%F62T%86%CAP%19*%83%96%CA%B8Xe%BC%FE)T%19%A1%17xg%7F%DA%CBP%19*%C3%BA%A52T%86%CAP%19%F62T%86%CA%B0n%A9%0CZ%1DV%C6%3D%F3%FCH%DE%B4%B8~%7F%5CZc%F1%D6%1F%AF%84%F9%0F6%E6%EBVt9%0E~%BEr%AF%23%B0%97%A12T%86%CAP%19%B4T%86%CA%B8Re%D8%CBP%19*%C3%BA%A52huX%19%AE%CA%E5%BC%0C%7B%19*CeX%B7h%A9%0C%95%E1%BC%0C%7B%19*CeX%B7T%06%AD%CB%5E%95%2B%BF.%8F%C5%97%D5%E4%7B%EE%82%D6%FB%CF-%9C%FD%B9%CF%3By%7B%19%F62T%86%CA%B0n%D1R%19*%A3%D3%CA%B0%97%A12T%86uKe%D0%EA%B02*%3F1%99%5DB%2B%A4%B5%F8%3A%7C%BA%2B%8Co%7D%5C%EDe%A8%0C%95a%DDR%19%B4T%C66%82fA%B2%ED%DA%9FC%FC%17GZ%06%C9%E1%B3%E5%2C%1A%9FoiB%EB%96%CA%A0%D5qe4%7B%7D%FD%85%F7%5B%ED_%E0s%07%F0k%951%ECr%0D%B5C%D7-g%D1%A8%0C%EB%96%CA%A0%A52T%C6)*%C3%5E%86%CAP%19%D6-%95A%EB*%95q%F8%BB%E3%F9%AB%F6%E21%ACZ%B7%22%B7%9B%3F%02%85%CB%A2%5B%B7%BA%5E%B7%9C%97%E1%BC%0C%EB%16-%95%A12z%AC%0C%BFc%A22T%86uKe%D0%EA%B02V%DD%AD%8A%2B%8CWhe%5E%AF%CF%F5%3B%26%CE%CBh%5C%19%CE%CB%B0%F3%A4%095%A1%CAP%19*Ce%A8%0C%3BO*Ce%A8%0C%95%A12%3A%AD%8C%0A%82%7B%F0v%1F%2FD%A9%5B%9F%EE%EA%26%AF%03%CA%DF9%7B%19*Ce%A8%0C%95%A12T%86%CA%B8Ze%D8%CBP%19*Ce%A8%0C%95%D1ae%EC%F7%89I%E1%B4%D7M%D7P%8BjU%5C%BB%3E%F2%20%D8%CBP%19*Ce%A8%0C%95%A12T%C6%D5*%C3%5E%86%CAP%19*Ce%B4O%07%7B%F0W%7Bw%1C%7C%1A%8C%B3%3B%D1%EE%AA%5C%D6-%EBV%83%80%5E%D0%CA%10%5CU%2BD%E07YU%86%CAP%19*%E3%9A%95%91%D9%A0%C8%AD%5B%EDv%9E%82%FFKOee%E4%8FUe%A8%0C%95%A12T%C6%1F%A9%8C%C8%3D%5B%A5%15%FD%14%22r%E7B%9F%17l%F8%BF%ED%EAf%2B%7F%CF%ECe%D8%CBP%19*Ce%A8%0C%95%E1%93~%7B%19%F62T%86%CAP%19*Ce%A8%0C%E7%13%DA%CBP%19*Ce%A8%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4%AE%A4%F5%25%C0%00%DE%BF%5C'%0F%DA%B8q%00%00%00%00IEND%AEB%60%82") repeat-y !important;
-    border-left: 1px solid #BBBBBB !important;
-    border-right: 1px solid #000000 !important;
-    border-bottom: 1px dashed #BBBBBB !important;
-}
-
-.overflowRulerX > .firebugRulerV {
-    left: 0 !important;
-}
-
-.overflowRulerY > .firebugRulerH {
-    top: 0 !important;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-.fbProxyElement {
-    position: fixed !important;
-    pointer-events: auto !important;
-}
-</style></head>
-<body>
-    <form name="aspnetForm" method="post" action="http://cs.nju.edu.cn/yuy/default.aspx" id="aspnetForm">
-<div>
-<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE4NTY5ODM3MDBkZF+XfEz2Qd3uH2z8VIojZ+smY9uF" type="hidden">
-</div>
-
-		<script type="text/javascript">
 <!--
-__BaseName = "ctl00_CphMaster_";
-// -->
-</script>
-		<script type="text/javascript">
-		<!--
-			function __GetServerElementById(id) {
-				return document.getElementById(__BaseName + id);
-			}
-		// -->
-		</script>
-    
-        <div id="HeaderDiv">
-
-
-        </div>
-                   
-        <div id="ContainerDiv">
-                 
-            <div id="SidebarDiv">
-                <div id="SidebarHeaderDiv">
-                    <!-- Used for layout purposes only -->
-                </div>
-                <div id="SidebarContentDiv">
-
-
-                </div>
-                <div id="SidebarFooterDiv">
-                    <!-- Used for layout purposes only -->
-                </div>
-            </div>
-            <div id="MainDiv">
-                <div id="MainHeaderDiv">
-                    <!-- Used for layout purposes only -->
-                </div>
-
-
-​                
-
-    <script type="text/javascript">
-<!--
-var __cookiePath = "/yuy";
-// -->
-</script>
-
-    <script type="text/javascript">
-    <!--
-        function __ShowAllTrail() {
-            try {
-                document.getElementById("BreadcrumbsDivMin").style["display"] = "none";
-                document.getElementById("BreadcrumbsDivAll").style["display"] = "";
-                __SetStatus("1");
-            }
-            catch(ex) { }
-            return false;
-        }
-        function __HideTrail() {
-            try {
-                document.getElementById("BreadcrumbsDivMin").style["display"] = "";
-                document.getElementById("BreadcrumbsDivAll").style["display"] = "none";
-                __SetStatus("0");
-            }
-            catch(ex) { }
-            return false;
-        }
-        
-        function __CreateCookie(name, value, days) {
-            if(days) {
-    	        var date = new Date();
-    	        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    	        var expires = "; expires=" + date.toGMTString();
-            }
-            else var expires = "";
-            document.cookie = name + "=" + value + expires + "; path=" + __cookiePath;
-        }
-    
-        function __ReadCookie(name) {
-            var nameEQ = name + "=";
-            var ca = document.cookie.split(';');
-            for(var i =0; i < ca.length; i++) {
-    	        var c = ca[i];
-    	        while(c.charAt(0) == ' ') c = c.substring(1, c.length);
-    	        if(c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-    
-        function __EraseCookie(name) {
-            __CreateCookie(name, "", -1);
-        }
-        
-        function __SetStatus(open) {
-            __CreateCookie("ScrewTurnWikiBCT", open, 365);
-        }
-        function __GetStatus() {
-            var value = __ReadCookie("ScrewTurnWikiBCT");
-            if(value) return value;
-            else return "0";
-        }
-        
-    // -->
-    </script>
-
-<!-- personal information -->
-<a id="PageTop"></a><div id="PageHeaderDiv"><div id="EditHistoryLinkDiv"><a id="DiscussLink" href="http://cs.nju.edu.cn/yuy/MainPage.ashx?Discuss=1&amp;NoRedirect=1">Discuss (0)</a><a id="ViewCodeLink" href="http://cs.nju.edu.cn/yuy/MainPage.ashx?Code=1">View Page Code</a><a id="HistoryLink" href="http://cs.nju.edu.cn/yuy/History.aspx?Page=MainPage">History</a></div><h1 class="pagetitle">Ke Xue @ LAMDA-NJU AI</h1><div id="PrintLinkDiv"><a id="PrintLink" href="http://cs.nju.edu.cn/yuy/Print.aspx?Page=MainPage" target="_blank" title="Printer friendly version">Print</a></div><div id="RssLinkDiv"><a id="RssLink" href="http://cs.nju.edu.cn/yuy/RSS.aspx?Page=MainPage" title="Update notifications for this Page (RSS 2.0)">RSS</a></div><div id="PageInfoDiv">Modified: 2023/12/19 by <a href="http://cs.nju.edu.cn/yuy/Message.aspx?Username=admin">admin</a> - <a href="http://cs.nju.edu.cn/yuy/AllPages.aspx?Cat=-"><i>Uncategorized</i></a></div></div><div id="PageContentDiv"><table border="0" cellpadding="10" width="100%"><tbody><tr><td align="right" valign="top" width="200">
-
-<!-- <img src="xuek%20@%20LAMDA_files/xk_5.jpg" alt="Image" height="308" width="308"></td><td align="left" valign="top"> -->
-<img src="xuek%20@%20LAMDA_files/xk_gosau.jpg" alt="Image" height="250"></td><td align="left" valign="top">   
-<img src="xuek%20@%20LAMDA_files/name_xk.png" alt="Chinese name" height="71" width="114">
-<br>  <span class="big">Ke Xue</span><br>
-<br> Ph.D. Student
-<br> LAMDA Group
-<br> School of Artificial Intelligence
-<br> National Key Laboratory for Novel Software Technology
-<br> Nanjing University
-<br> email: xuek at lamda.nju.edu.cn  </td>
-
-
-
-<td align="right" valign="top"><a href="http://www.lamda.nju.edu.cn/MainPage.ashx" title="http://www.lamda.nju.edu.cn" target="_blank">
-    <img src="xuek%20@%20LAMDA_files/lamda_logo.jpg" alt="Image" height="90" width="204"></a> 
-<p align="center"><a href="https://www.nju.edu.cn/en/" target="_blank"><img height="120" src="./xuek%20@%20LAMDA_files/nju.jpg" width="100" border="0"></a></p>
-</td></tr></tbody></table><br>
-
-<p>
-    Currently I am a Ph.D. student of <a href="http://ai.nju.edu.cn/" target="_blank">School of Artificial Intelligence</a> in
-    <a href="http://www.nju.edu.cn/" target="_blank">Nanjing University</a> advised 
-    by Prof.<a href="http://www.lamda.nju.edu.cn/qianc/" target="_blank">  Chao Qian </a> and a member of 
-	<a href="http://www.lamda.nju.edu.cn/MainPage.ashx" target="_blank">LAMDA</a> Group, led by Prof. <a href="http://www.lamda.nju.edu.cn/zhouzh/" target="_blank">Zhi-Hua Zhou.</a>
-</p>
-
-<br>
-
-
-<a href="http://cs.nju.edu.cn/yuy/Edit.aspx?Page=MainPage&amp;Section=2" class="editsectionlink">Edit</a><a id="Biography_2"></a><h1 class="separator">Biography</h1>
-	<li><b>Sep 2019 - Now</b> : Ph.D. candidate in Computer Science, <a href="http://ai.nju.edu.cn/" target="_blank">School of Artificial Intelligence</a>, 
-        <a href="http://www.nju.edu.cn/" target="_blank">Nanjing University</a>.
-    <li><b>Sep 2015 - Jun 2019</b> : B.Sc. in Mathematics and Applied Mathematics, <a href="http://math.sysu.edu.cn/" target="_blank">School of Mathematics</a>, 
-        <a href="http://www.sysu.edu.cn/" target="_blank">Sun Yat-Sen University</a>; </li>
-    <li><b>Sep 2012 - Jun 2015</b> : <a href="https://www.hnjyyz.com/" target="_blank"> Jiyuan No.1 Middle School of Henan</a>;
-
-<br>
-<br>
-
-<a href="http://cs.nju.edu.cn/yuy/Edit.aspx?Page=MainPage&amp;Section=3" class="editsectionlink">Edit</a><a id="Research_Interest_3"></a>
-    <h1 class="separator">Research Interest</h1>
-    I am interested in <b>black-box optimization algorithms</b>, such as: </li>   
-                <li> <b>Evolutionary algorithms</b> [c2], especially <b>Quality-Diversity algorithms</b> [c3, c7, i1, c11, c13, c14];</li>
-                <li> <b>Bayesian optimization</b> [c1, c4, c10];</li>  
-                <li> <b>Learning to optimize</b> [c5, i2, c12, c15, c16];</li>
-    and their <b> applications</b>, such as:
-               <li> <b>Human-AI coordination</b> [c6, c8, j1, j3, j4];</li>
-               <li> <b>Electronic design automation</b> [c9, i3, c17, c18]; </li>
-               <li> <b>AI for science</b> [j2];
-
-<br>
-<br>
-
-<a href="http://cs.nju.edu.cn/yuy/Edit.aspx?Page=MainPage&amp;Section=3" class="editsectionlink">Edit</a><a id="Publication_2"></a><h1 class="separator">Journal Article</h1>
-<i><sup>#</sup> Equal Contribution</i>
-
-
-<li> [j4] Cong Guan, Feng Chen, <u>Ke Xue</u>, Chunpeng Fan, Lichao Zhang, Ziqian Zhang, Pengyao Zhao, Zongzhang Zhang, Chao Qian, Lei Yuan, Yang Yu. 
-    One by One, Continual Coordinating with Humans via Hyper-Teammate Identification. 
-    <strong>Transactions on Machine Learning Research</strong>, in press.
-</li>
-
-<li>[j3] <u>Ke Xue</u>, Yutong Wang, Cong Guan, Lei Yuan, Chao Qian, and Yang Yu. 
-    Heterogeneous Multi-Agent Zero-Shot Coordination by Coevolution. <strong>IEEE Transactions on Evolutionary Computation</strong>, in press. 
-    [<a href="https://arxiv.org/abs/2208.04957">Preprint</a>]
-</li> 
-
-
-<li>[j2] Han Hu<sup>#</sup>, Chao Qian<sup>#</sup>, <u>Ke Xue<sup>#</sup></u>, Rainer Georg Jörgensen, Marco Keiluweit, Chao Liang, Xuefeng Zhu, Ji Chen, Yishen Sun, Haowei Ni, Jixian Ding, Weigen Huang, Jingdong Mao, Rong-Xi Tan, Jizhong Zhou, Thomas W. Crowther, Zhi-Hua Zhou, Jiabao Zhang, and Yuting Liang. Reducing the Uncertainty in Estimating Soil Microbial Derived Carbon Storage. <strong>Proceedings of the National Academy of Sciences</strong>, 2024, 121(35): e2401916121. [<a href="https://www.pnas.org/doi/10.1073/pnas.2401916121">PDF</a>]
-</li>
-
-<li>[j1] Cong Guan, <u>Ke Xue</u>, Chunpeng Fan, Feng Chen, Lei Yuan, Chao Qian, and Yang Yu.
-    Open and Real-World Human-AI Coordination by Heterogeneous Training with Communication. 
-    <strong>Frontiers of Computer Science</strong>, 2025, 19(4): 194314. [<a href="https://journal.hep.com.cn/fcs/EN/10.1007/s11704-024-3797-6">PDF</a>]
-</li>
-
-<br>
-
-<a href="http://cs.nju.edu.cn/yuy/Edit.aspx?Page=MainPage&amp;Section=3" class="editsectionlink">Edit</a><a id="Publication_2"></a><h1 class="separator">Conference Paper</h1>
-
-
-<li>[c18] Yunqi Shi, Siyuan Xu, Shixiong Kai, Xi Lin, <u>Ke Xue</u>, Mingxuan Yuan, and Chao Qian. Timing-Driven Global Placement by Efficient Critical Path Extraction.
-<strong> In: Proceedings of 2025 Design, Automation & Test in Europe Conference & Exhibition (DATE'25)</strong>, Lyon, France, 2025, to appear. <font color="red"> (Best paper candidate)</font>
-</li>
-
-<li>[c17] <u>Ke Xue</u>, Ruo-Tong Chen, Xi Lin, Yunqi Shi, Shixiong Kai, Siyuan Xu, and Chao Qian. 
-    Reinforcement Learning Policy as Macro Regulator Rather than Macro Placer. 
-    In: <strong> Advances in Neural Information Processing Systems 37 (NeurIPS'24)</strong>, Vancouver, Canada, 2024, to appear.
-    <!-- [<a href="https://openreview.net/pdf?id=3AuoStfUIH">PDF</a>]
-    [<a href="https://github.com/lamda-bbo/offline-moo">Code</a>] -->
-</li> 
-
-<li>[c16] Shukuan Wang<sup>#</sup>, <u>Ke Xue<sup>#</sup></u>, Lei Song, Xiaobin Huang, and Chao Qian. 
-    Monte Carlo Tree Search based Space Transfer for Black Box Optimization.
-    In: <strong> Advances in Neural Information Processing Systems 37 (NeurIPS'24)</strong>, Vancouver, Canada, 2024, to appear. <font color="red">(Spotlight)</font>
-    <!-- [<a href="https://openreview.net/pdf?id=3AuoStfUIH">PDF</a>]
-    [<a href="https://github.com/lamda-bbo/offline-moo">Code</a>] -->
-</li> 
-
-<li>[c15] <u>Ke Xue<sup>#</sup></u>, Rong-Xi Tan<sup>#</sup>, Xiaobin Huang, and Chao Qian.
-    Offline Multi-Objective Optimization.
-    In: <strong> Proceedings of the 41st International Conference on Machine Learning (ICML'24)</strong>, Vienna, Austria, 2024, pp.55595-55624. 
-    [<a href="https://openreview.net/pdf?id=3AuoStfUIH">PDF</a>]
-    [<a href="https://github.com/lamda-bbo/offline-moo">Code</a>]
-</li> 
-
-<li>[c14] Ren-Jian Wang, <u>Ke Xue</u>, Cong Guan, and Chao Qian. 
-    Quality-Diversity with Limited Resources.
-    In: <strong> Proceedings of the 41st International Conference on Machine Learning (ICML'24)</strong>, Vienna, Austria, 2024, pp.51984-52001.
-    [<a href="https://openreview.net/pdf?id=64I29YeQdt">PDF</a>]
-    [<a href="https://github.com/lamda-bbo/RefQD">Code</a>]
-</li> 
-
-<li>[c13] Chao Qian, <u>Ke Xue</u>, and Ren-Jian Wang. 
-    Quality-Diversity Algorithms Can Provably Be Helpful for Optimization.
-    In: <strong>Proceedings of the 33rd International Joint Conference on Artificial Intelligence (IJCAI'24)</strong>, Jeju Island, Korea, 2024, pp.6994-7002. 
-    [<a href="https://arxiv.org/abs/2401.10539">PDF</a>]
-</li>      
-
-<li>[c12] Chengrui Gao, Haopu Shang, <u>Ke Xue</u>, Dong Li, and Chao Qian. 
-    Towards Generalizable Neural Solvers for Vehicle Routing Problems via Ensemble with Transferrable Local Policy. 
-    In: <strong>Proceedings of the 33rd International Joint Conference on Artificial Intelligence (IJCAI'24)</strong>, Jeju Island, Korea, 2024, pp.6914-6922.
-    [<a href="https://arxiv.org/abs/2308.14104">PDF</a>]
-    [<a href="https://github.com/lamda-bbo/ELG">Code</a>]
-</li> 
-
-<li>[c11] <u>Ke Xue<sup>#</sup></u>, Ren-Jian Wang<sup>#</sup>, Pengyi Li, Dong Li, Jianye Hao, and Chao Qian. 
-    Sample-Efficient Quality-Diversity by Cooperative Coevolution.
-    In: <strong>Proceedings of the 12th International Conference on Learning Representations (ICLR'24)</strong>, Vienna, Austria, 2024. <font color="red">(Spotlight)</font>
-    [<a href="https://openreview.net/pdf?id=JDud6zbpFv">PDF</a>]
-    [<a href="https://github.com/lamda-bbo/CCQD">Code</a>]
-</li>  
-
-<li>[c10] Xiaobin Huang, Lei Song, <u>Ke Xue</u>, and Chao Qian. 
-    Stochastic Bayesian Optimization with Unknown Continuous Context Distribution via Kernel Density Estimation.
-    In: <strong>Proceedings of the 38th AAAI Conference on Artificial Intelligence (AAAI'24)</strong>, Vancouver, Canada, 2024, pp.12635-12643.    
-[<a href="https://ojs.aaai.org/index.php/AAAI/article/view/29158">PDF</a>]
-[<a href="https://github.com/lamda-bbo/sbokde">Code</a>]
-</li>   
-
-<li>[c9] Yunqi Shi, <u>Ke Xue</u>, Lei Song, and Chao Qian. 
-    Macro Placement by Wire-Mask-Guided Black-Box Optimization. 
-    In: <strong>Advances in Neural Information Processing Systems 36 (NeurIPS'23)</strong>, New Orleans, LA, 2023.</li>
-</li>    
-[<a href="https://openreview.net/pdf?id=hoyL1Ypjoo">PDF</a>]
-[<a href="https://github.com/lamda-bbo/WireMask-BBO">Code</a>]
-
-<li>[c8] Ziqian Zhang, Lei Yuan, Lihe Li, <u>Ke Xue</u>, Chengxing Jia, Cong Guan, Chao Qian, and Yang Yu. 
-    Fast teammate adaptation in the presence of sudden policy change. 
-    In: <strong>Proceedings of the 39th Conference on Uncertainty in Artificial Intelligence (UAI'23)</strong>, Pittsburgh, PA, 2023, pp.2465-2476.
-[<a href="https://openreview.net/pdf?id=akeVfjnPfTS">PDF</a>]
-</li>    
-
-<li>[c7] Ren-Jian Wang, <u>Ke Xue</u>, Haopu Shang, Chao Qian, Haobo Fu, and Qiang Fu. 
-    Multi-objective Optimization-based Selection for Quality-Diversity by Non-surrounded-dominated Sorting.
-    In: <strong>Proceedings of the 32nd International Joint Conference on Artificial Intelligence (IJCAI'23)</strong>, Macao, SAR, China, 2023, pp.4335-4343.  
-[<a href="https://openreview.net/pdf?id=akeVfjnPfTS">PDF</a>]  
-[<a href="https://github.com/lamda-bbo/NSS">Code</a>]
-</li>    
-
-<li>[c6] Lei Yuan, Zi-Qian Zhang, <u>Ke Xue</u>, Hao Yin, Feng Chen, Cong Guan, Li-He Li, Chao Qian, and Yang Yu. 
-    Robust multi-agent coordination via evolutionary generation of auxiliary adversarial attackers. 
-    In: <strong>Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI'23)</strong>, Washington, DC, 2023, pp.11753-11762. <font color="red">(Oral)</font>
-[<a href=" https://ojs.aaai.org/index.php/AAAI/article/view/26388">PDF</a>] 
-[<a href="https://github.com/zzq-bot/ROMANCE">Code</a>]   
-    
-</li>
-
-<li>[c5] <u>Ke Xue<sup>#</sup></u>, Jiacheng Xu<sup>#</sup>, Lei Yuan, Miqing Li, Chao Qian, Zongzhang Zhang, and Yang Yu. 
-    Multi-agent Dynamic Algorithm Configuration. 
-    In: <strong>Advances in Neural Information Processing Systems 35 (NeurIPS'22)</strong>, New Orleans, LA, 2022. <font color="red">(Spotlight)</font>
-    [<a href="https://openreview.net/forum?id=h3jZCLjhtmV">PDF</a>]
-    [<a href="https://github.com/lamda-bbo/madac">Code</a>]
-</li> 
-
-<li>[c4] Lei Song<sup>#</sup>, <u>Ke Xue<sup>#</sup></u>, Xiaobin Huang, and Chao Qian. 
-    Monte Carlo Tree Search based Variable Selection for High Dimensional Bayesian Optimization.
-    In: <strong>Advances in Neural Information Processing Systems 35 (NeurIPS'22)</strong>, New Orleans, LA, 2022. <font color="red">(Spotlight)</font> 
-    [<a href="https://openreview.net/forum?id=SUzPos_pUC">PDF</a>]
-    [<a href="https://github.com/lamda-bbo/MCTS-VS">Code</a>]
-</li> 
-
-<li>[c3] Yutong Wang<sup>#</sup>, <u>Ke Xue<sup>#</sup></u>, and Chao Qian. Evolutionary Diversity Optimization with Clustering-based Selection for Reinforcement Learning. 
-    In: <strong>Proceedings of the 10th International Conference on Learning Representations (ICLR'22)</strong>, Virtual, 2022. 
-    [<a href="https://openreview.net/forum?id=74x5BXs4bWD">PDF</a>]
-    [<a href="http://www.lamda.nju.edu.cn/qianc/code-EDOCS.html">Code</a>]
-</li>
-<li>[c2] <u>Ke Xue</u>, Chao Qian, Ling Xu, and Xu-Dong Fei. Evolutionary Gradient Descent for Non-convex Optimization. 
-    In: <strong>Proceedings of the 30th International Joint Conference on Artificial Intelligence (IJCAI'21)</strong>, Virtual, 2021, pp.3221-3227. 
-    [<a href="https://www.ijcai.org/proceedings/2021/443">PDF</a>]
-    [<a href="http://www.lamda.nju.edu.cn/qianc/code_EGD.html">Code</a>]
-</li>
-<li>[c1] Chao Qian, Hang Xiong, and <u>Ke Xue</u>. Bayesian Optimization using Pseudo-Points. 
-    In: <strong>Proceedings of the 29th International Joint Conference on Artificial Intelligence (IJCAI'20)</strong>, Yokohama, Japan, 2020, pp.3044-3050. 
-    [<a href="https://www.ijcai.org/proceedings/2020/0421.pdf">PDF</a>]
-</li>
-<br>
-
-<a href="http://cs.nju.edu.cn/yuy/Edit.aspx?Page=MainPage&amp;Section=3" class="editsectionlink">Edit</a><a id="Publication_2"></a><h1 class="separator">Manuscripts</h1>
-<li>[i3] <u>Ke Xue<sup>#</sup></u>, Xi Lin<sup>#</sup>, Yunqi Shi, Shixiong Kai, Siyuan Xu, and Chao Qian. 
-    Escaping Local Optima in Global Placement. 
-    In: <strong>Proceedings of the 61th ACM/IEEE Design Automation Conference (DAC'24)</strong>, San Francisco, CA, 2024. (Work-in-Progress poster) 
-    [<a href="https://arxiv.org/abs/2402.18311">Preprint</a>]
-</li>
-
-<li>[i2] Lei Song, Chenxiao Gao, <u>Ke Xue</u>, Chenyang Wu, Dong Li, Jianye Hao, Zongzhang Zhang, and Chao Qian.
-    Reinforced In-Context Black-Box Optimization.
-    arxiv, 2024.
-    [<a href="https://arxiv.org/abs/2402.17423">Preprint</a>]
-</li>
-
-<li>[i1] Ren-Jian Wang<sup>#</sup>, <u>Ke Xue<sup>#</sup></u>, Yutong Wang, Peng Yang, Haobo Fu, Qiang Fu, and Chao Qian. 
-    Diversity from Human Feedback. In: <strong> <a href="https://sites.google.com/view/aloe2023/home">2nd Agent Learning in Open-Endedness Workshop</a> at NeurIPS'23</strong>, New Orleans, LA, 2023.
-    [<a href="https://arxiv.org/abs/2310.06648">Preprint</a>]
-</li>
-
-<br>
-<br>
-<a href="http://cs.nju.edu.cn/yuy/Edit.aspx?Page=MainPage&amp;Section=4" class="editsectionlink">Edit</a><a id="Awards_and_Honors_4"></a><h1 class="separator">Awards</h1> 
-    <li><b>2024</b> : National Scholarship, Nanjing University </a>;</li>
-    <li><b>2024</b> : 21st ACM SIGEVO Humies <a href="https://gecco-2024.sigevo.org/Humies-Awards">BRONZE Awards</a> (with Yunqi Shi, Lei Song, and Chao Qian) </li>
-    <li><b>2023</b> : Huawei Spark Award (华为“揭榜挂帅”火花奖), "Multi-objective Black-box Optimization Technology for Ultra-High-Dimensional Spaces", Huawei Technologies Co., Ltd. ;</li>
-    <li><b>2022</b> : Huawei Spark Award (华为“揭榜挂帅”火花奖), "Fast Multi-objective Optimization Strategies for Large-Scale Network Optimization with Complex Network Parameter Correlations", Huawei Technologies Co., Ltd. ;</li>
-    <!-- <li><b>2022</b> : Huawei Scholarship, Nanjing University </a>;</li> -->
-    <li><b>2021</b> : National Scholarship, Nanjing University </a>.</li>
-    <!-- <li><b>2020</b> : Outstanding Student Leaders, Nanjing University </a>;</li> -->
-    <!-- <li><b>2020</b> : First-Class Academic Scholarship, Nanjing University </a>;</li> -->
-    <!-- <li><b>2018</b> : Outstanding Student Award, Sun Yat-Sen University </a>.</li> -->
-    <br>
-
-
-<a href="http://cs.nju.edu.cn/yuy/Edit.aspx?Page=MainPage&amp;Section=3" class="editsectionlink">Edit</a><a id="Publication_2"></a><h1 class="separator">Services</h1>
-<b> Conference PC Member</b>: 
-<li> ICML: 2022, 2023, 2024 </li>
-<li> NeurIPS: 2022, 2023, 2024 </li> 
-<li> ICLR: 2024, 2025 </li> 
-<li> AAAI: 2023, 2024, 2025 </li>
-<li> ECAI: 2023 </li>
-<li> AutoML: 2023 </li>
-<li> IEEE SSCI: 2022 </li>
-<li> CCML 2023 </li>
-<li> CCAI: 2022 </li>
-
-<b> Journal Reviewer</b> : 
-<li> SCIENCE CHINA Information Sciences
-<li> IEEE Transactions on Evolutionary Computation</li>
-<li> IEEE Transactions on Emerging Topics in Computational Intelligence</li>
-<li> Swarm and Evolutionary Computation </li>
-<li> Frontiers of Computer Science</li>
-<br>
-
-<a href="http://cs.nju.edu.cn/yuy/Edit.aspx?Page=MainPage&amp;Section=3" class="editsectionlink">Edit</a><a id="Publication_2"></a><h1 class="separator">Teaching Assistant</h1>
-<li> Heuristic Search and Evolutionary Algorithms (For undergraduate and graduate students, 
-    <a href="http://www.lamda.nju.edu.cn/HSEA20/" target="_blank">2020</a>, 
-    <a href="http://www.lamda.nju.edu.cn/HSEA21/" target="_blank">2021</a>, 
-    <a href="http://www.lamda.nju.edu.cn/HSEA22/" target="_blank">2022</a>
-    )</li>
-
-
-
-<br><br><b>Contact:</b><br>
-National Key Laboratory for Novel Software Technology, Nanjing University, Xianlin Campus Mailbox 603, 163 Xianlin Avenue, Qixia District, Nanjing 210023, China<br> 
-</div>
-    
-    <script type="text/javascript">
-    <!--
-        if(__GetStatus() == "1") __ShowAllTrail();
-    // -->
-    </script>
-
-
-​                
-​                <div id="MainFooterDiv">
-​                    <!-- Used for layout purposes only -->
-​                </div>
-​            </div>
-​    
-        </div>
-            
-<div id="FooterDiv"><hr>
-<div style="text-align:right">Last modified: 
-    <script>
-        t = new Date(document.lastModified).toLocaleDateString()
-        document.write(t);
-    </script>
-</div>
-</div>
-
-</form>  
-
-
-
-<div style="width: 30%;margin: 0 auto">
-<script type="text/javascript" id="clustrmaps" 
-    src="//cdn.clustrmaps.com/map_v2.js?d=hBDadAMXi9r9TKXL0rtMDq6R36Bc8YiRQ9mDytpFwT0&cl=ffffff&w=a">
-</script>
-</div>
-
-<!-- <div style="width: 20%;margin: 0 auto"><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=_woISUZtunrjmwon1czPkNAkNdADdejpOkjp-eO3YG8"></script></div> -->
-
+ * @Author: Jon Barron
+ * @Date: 2019-05-11 22:15:22
+ * @Editors: whyisyoung
+ * @EditTime: 2020-10-23 10:57:25
+ * @LastEditors: RMSnow xueyao_98@foxmail.com
+ * @LastEditTime: 2024-02-27 23:34:11
+ -->
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+ <!-- https://ibruce.info/2015/04/04/busuanzi/#more -->
+ <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
+ <html>
+ 
+ <head>
+   <meta name=viewport content="width=device-width">
+   <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+   <meta name="google-site-verification" content="p7SNRHPF7y83Q-nNBLkrxFhAAosW2t40unwTxByZ0vo" />
+   <meta charset="utf-8">
+ 
+   <style type="text/css">
+     /* Color scheme stolen from Sergey Karayev */
+ 
+     span.tag {
+       font-size: 11px;
+       color: #FFFFFF;
+       /* color: #07889b; */
+       background-color: #0076DF;
+       box-shadow: 2px 2px 1px #E0E0E0;
+       padding: 1px 5px 2px 5px;
+     }
+ 
+     span.wow {
+       font-size: 11px;
+       color: #FFFFFF;
+       /* color: #07889b; */
+       background-color: rgb(180, 16, 44);
+       box-shadow: 2px 2px 1px #E0E0E0;
+       padding: 1px 5px 2px 5px;
+     }
+ 
+     a {
+       color: #1772d0;
+       /* color: #07889b; */
+       text-decoration: none;
+     }
+ 
+     a.black {
+       color: #000000;
+       /* color: #07889b; */
+       text-decoration: none;
+     }
+ 
+     a:focus,
+     a:hover {
+       /* color: #e37222; #f09228; */
+       color: rgb(180, 16, 44);
+       text-decoration: none;
+     }
+ 
+     body,
+     td,
+     th,
+     tr,
+     p,
+     a {
+       font-family: 'Lato', Verdana, Helvetica, sans-serif;
+       font-size: 16px
+     }
+ 
+     strong {
+       font-family: 'Lato', Verdana, Helvetica, sans-serif;
+       font-size: 16px;
+     }
+ 
+     heading {
+       font-family: 'Lato', Verdana, Helvetica, sans-serif;
+       font-size: 22px;
+       /* color: #e3225c; */
+       color: rgb(180, 16, 44);
+       /* color: rgb(117, 15, 109); */
+     }
+ 
+     subheading {
+       font-family: 'Lato', Verdana, Helvetica, sans-serif;
+       font-size: 18px;
+       font-style: italic;
+       /* color: #e3225c; */
+       color: rgb(180, 16, 44);
+     }
+ 
+     papertitle {
+       font-family: 'Lato', Verdana, Helvetica, sans-serif;
+       font-size: 16px;
+       font-weight: bold;
+     }
+ 
+     name {
+       font-family: 'Lato', Verdana, Helvetica, sans-serif;
+       font-size: 32px;
+     }
+ 
+     .footer {
+       font-family: 'Lato', Verdana, Helvetica, sans-serif;
+       font-size: 14px;
+       opacity: 0.75;
+       color: #777;
+     }
+ 
+     .one {
+       width: 160px;
+       height: 160px;
+       position: relative;
+     }
+ 
+     .two {
+       width: 160px;
+       height: 160px;
+       position: absolute;
+       transition: opacity .2s ease-in-out;
+       -moz-transition: opacity .2s ease-in-out;
+       -webkit-transition: opacity .2s ease-in-out;
+     }
+ 
+     .fade {
+       transition: opacity .2s ease-in-out;
+       -moz-transition: opacity .2s ease-in-out;
+       -webkit-transition: opacity .2s ease-in-out;
+     }
+ 
+     span.highlight {
+       background-color: #ffffd0;
+     }
+ 
+     span.artifact {
+       color: #6cb41b;
+       padding: 1px;
+     }
+ 
+     span.underline {
+       border-bottom: 1px solid black;
+       padding-bottom: 1px;
+     }
+ 
+     span.tldr {
+       color: #555555;
+     }
+ 
+     em.highlight {
+       color: #e37222;
+     }
+   </style>
+   <link rel="icon" type="image/png" href="images/music.ico">
+   <title>Xueyao Zhang</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet'
+     type='text/css'>
+ </head>
+ 
+ <body>
+   <table width="960" border="0" align="center" cellspacing="0" cellpadding="0">
+     <tr>
+       <td>
+         <!-- Intro Begin -->
+         <table width="100%" align="left" border="0" cellspacing="0" cellpadding="12" style="table-layout:fixed;">
+           <colgroup>
+             <col span="1" style="width: 22%;">
+             <col span="1" style="width: 78%;">
+           </colgroup>
+           <tr>
+             <td valign="middle">
+               <img src="images/me-yuqing-coat.jpg" height="180px">
+             </td>
+             <td valign="middle">
+               <p align="left">
+                 <name>Xueyao Zhang (张雪遥)</name>
+               </p>
+               <p>
+                 Ph.D. student, <br>
+                 <a href="https://sds.cuhk.edu.cn/en">School of Data Science</a>, <br>
+                 <a href="https://www.cuhk.edu.cn/en">The Chinese University of Hong Kong, Shenzhen</a>
+               </p>
+               <p align=left>
+                 <!-- E-mail: <span>xueyao_98 [AT] foxmail [DOT] com</span> -->
+                 E-mail: <span>xueyaozhang [AT] link.cuhk.edu.cn</span>
+                 <!-- or <span class="underline">zhangxueyao19s@ict.ac.cn</span> -->
+               </p>
+               <p align=left>
+                 <a href="resume/resume_EN.pdf">Curriculum Vitae</a>
+                 &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
+                 <a href="https://scholar.google.com/citations?user=lf1udBcAAAAJ&hl=en">Google
+                   Scholar</a> &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
+                 <a href="https://dblp.org/pid/237/9484.html">DBLP</a>
+                 &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
+                 <a href="https://github.com/RMSnow"> GitHub </a> &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
+                 <a href="https://www.zhihu.com/people/zhang-xue-yao-84">Zhihu</a>
+                 <!-- &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp; -->
+                 <!-- <a href="https://weibo.com/u/5831484448">Weibo</a> &nbsp;&nbsp;&nbsp; -->
+               </p>
+             </td>
+           </tr>
+         </table>
+         <!-- Intro End -->
+ 
+         <!-- About Me -->
+         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
+           <tr>
+             <td>
+               <heading>About me</heading>
+             </td>
+           </tr>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <tr>
+             <td valign="center">
+               <p>
+                 I'm a third-year Ph.D. student at the Chinese University of Hong Kong, Shenzhen (CUHK-Shenzhen),
+                 supervised by
+                 Professor <a href="http://www.drwuz.com/">Zhizheng Wu</a>. I'm participating in and leading the
+                 development of <a href="https://github.com/open-mmlab/Amphion"><i>Amphion</i></a>, which is an
+                 open-source toolkit for Audio, Music, and Speech Generation.
+                 <!-- </p>
+               <p> -->
+                 Before
+                 CUHK-Shenzhen, I received my master's degree (2019-2022) at the Institute of Computing Technology
+                 Chinese Academy of Sciences (ICT, CAS), researching <i>Fake
+                   News Detection</i> and <i> Fact Checking</i>.
+               </p>
+               <p>
+                 My research interests include:
+               <ul>
+                 <li>Applications: <b>Speech Generation</b>, <b>AI Music & AI for Music</b>, <b>AI for Social Good</b>
+                 </li>
+                 <li>Technologies: <b>Generative Model</b>, <b>Representation Learning</b></li>
+               </ul>
+               </p>
+             </td>
+           </tr>
+         </table>
+         <!-- About me End -->
+ 
+         <!-- News Begin -->
+         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
+           <tr>
+             <td>
+               <heading>Milestones</heading>
+             </td>
+           </tr>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <colgroup>
+             <col span="1" style="width: 23%;">
+             <col span="1" style="width: 77%;">
+           </colgroup>
+           <tr>
+             <td valign="center">
+               2024/08
+             </td>
+             <td valign="center">
+               <a href="https://arxiv.org/abs/2310.11160">My first paper</a> about singing voice processing got accepted
+               by IEEE SLT 2024.
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2024/05
+             </td>
+             <td valign="center">
+               I performed research at Meta (California, USA) as an intern during summer 2024.
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2023/12
+             </td>
+             <td valign="center">
+               My first attempt at leading the development of a
+               large-scale open-source project, <a href="https://github.com/open-mmlab/Amphion">Amphion</a>.
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2023/04
+             </td>
+             <td valign="center">
+               I was admitted by Tencent Rhino-Bird Talent Program 腾讯犀牛鸟精英人才计划 (Top 50+ of China).
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2022/09
+             </td>
+             <td valign="center">
+               I entered the Chinese University of Hong Kong (Shenzhen) as a Ph.D. student.
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2022/06
+             </td>
+             <td valign="center">
+               <a href="https://doi.org/10.1145/3503161.3548084">My first paper</a> about music generation got accepted
+               by ACM MM 2022.
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2021/11
+             </td>
+             <td valign="center">
+               I got the National Graduate Scholarship 2021 (funded by Ministry of Education of China).
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2021/01
+             </td>
+             <td valign="center">
+               <a href="https://dl.acm.org/doi/pdf/10.1145/3442381.3450004">My first paper</a> about fake news detection
+               got accepted by WWW 2021.
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2020/01
+             </td>
+             <td valign="center">
+               I got the third place at Campus Singer Competition, University of Chinese Academy of Sciences.
+             </td>
+           </tr>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <tr>
+             <td>
+               <div style="background-color: #F3F7FC!important;padding: 14px;">
+                 <p>
+                   <font size="+1"><b> &#9997 &nbsp; Call for Cooperations</b></font>
+                 </p>
+                 <p>
+                   <a href="https://drwuz.com/team/">Our team</a> is broadly interested in
+                   <b>Audio/Speech processing and synthesis</b>, <b>DeepFake detection</b>, and <b>AI + Music</b>.
+                   We publish our work in the top conferences and journals, and deploy research output to products by
+                   collaborating with industry. Our team has open positions for <i>Postdocs</i>, <i>PhD students</i>,
+                   <i>Research Assistants</i>, and <i>visiting research students/researchers</i> (more information can be
+                   seen <a href="https://zhuanlan.zhihu.com/p/565296478">here</a>). If you are willing to
+                   join
+                   our team, feel free to contact <b>wuzhizheng [AT] cuhk.edu.cn</b>. Besides, you are always welcome to
+                   discuss any ideas with me.
+                 </p>
+               </div>
+             </td>
+           </tr>
+         </table>
+         <!-- News End -->
+ 
+         <!-- Publications Begin -->
+         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
+           <tr>
+             <td>
+               <heading>Representative Works</heading>
+             </td>
+           </tr>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <td>
+             <subheading>Speech, Music, and Audio Generation</subheading>
+           </td>
+           <tr>
+             <td valign="center">
+               <!-- <span class="tag">SLT 2024</span>&nbsp;&nbsp; -->
+               <papertitle>
+                 Vevo: Controllable Zero-Shot Voice Imitation with Self-Supervised Disentanglment
+               </papertitle>
+               <br>
+               <span class="underline">Xueyao Zhang</span>, <a class="black"
+                 href="https://scholar.google.com/citations?user=3mJXfe8AAAAJ&hl=en">Xiaohui Zhang</a>, <a class="black"
+                 href="https://scholar.google.com/citations?user=Fhg8dSwAAAAJ&hl=en&oi=ao">Kainan Peng</a>,
+               <a class="black" href="https://scholar.google.com/citations?user=gPGVGTkAAAAJ&hl=en&oi=sra">Zhenyu
+                 Tang</a>,
+               <a class="black" href="https://scholar.google.com/citations?user=8t3Ex0QAAAAJ&hl=en&oi=ao">Vimal
+                 Manohar</a>,
+               Yingru Liu, Jeff Hwang, Dangna Li, Yuhao Wang, Julian Chan, Yuan Huang, <a class="black"
+                 href="https://drwuz.com/">Zhizheng
+                 Wu</a>, <a class="black"
+                 href="https://scholar.google.com/citations?user=_vryxeMAAAAJ&hl=en&oi=ao">Mingbo Ma</a>
+               <br>
+               <!-- <i>Proceedings of the IEEE Spoken Language Technology Workshop 2024</i> -->
+               <!-- <br> -->
+               <a href="https://openreview.net/pdf?id=anQDiQZhDP">Preprint</a> /
+               <a href="data/Vevo/vevo-poster.pdf">Poster</a> /
+               <a href="https://versavoice.github.io/">Demo</a>
+               <br>
+               <span class="tldr">TL;DR: We propose a versatile zero-shot voice imitation framework, with controllable
+                 timbre and style.
+               </span>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               <span class="tag">SLT 2024</span>&nbsp;&nbsp;
+               <a href="https://github.com/open-mmlab/Amphion">
+                 <img src="https://img.shields.io/github/stars/open-mmlab/Amphion?color=success&logo=github">
+               </a>
+               &nbsp;&nbsp;
+               <papertitle>
+                 Amphion: An Open-Source Audio, Music and Speech Generation Toolkit
+               </papertitle>
+               <br>
+               <span class="underline">Xueyao Zhang</span>*, <a class="black"
+                 href="https://scholar.google.com/citations?user=KNqxVT0AAAAJ&hl=zh-CN">Liumeng Xue</a>*, <a
+                 class="black" href="https://www.yichenggu.com/">Yicheng
+                 Gu*</a>, <a class="black"
+                 href="https://scholar.google.com/citations?user=60uamz4AAAAJ&hl=en&oi=sra">Yuancheng
+                 Wang</a>*, Jiaqi Li*, Haorui He, Chaoren Wang, Songting Liu, Xi Chen, Junan Zhang, Zihao Fang, Haopeng
+               Chen, Tze Ying Tang,
+               Lexiao Zou, Mingxuan Wang, <a class="black" href="https://stevenhan1991.github.io/">Jun Han</a>, <a
+                 class="black" href="https://chenkai.site/">Kai
+                 Chen</a>, <a class="black" href="https://www.colips.org/~eleliha/">Haizhou Li</a>, <a class="black"
+                 href="https://drwuz.com/">Zhizheng
+                 Wu</a> (*: Equal Contribution)
+               <br>
+               <i>Proceedings of the IEEE Spoken Language Technology Workshop 2024</i>
+               <br>
+               <a href="https://arxiv.org/pdf/2312.09911.pdf">Preprint</a> /
+               <a href="https://github.com/open-mmlab/Amphion">GitHub</a> /
+               <!-- <a href="data/HAT/slides.pdf">Slides</a> / -->
+               <a href="https://huggingface.co/amphion">HuggingFace</a> /
+               <a href="https://openxlab.org.cn/usercenter/Amphion">OpenXLab</a>
+               <br>
+               <span class="tldr">TL;DR: We develop a unified audio generation open-source toolkit.
+               </span>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               <span class="tag">SLT 2024</span>&nbsp;&nbsp;
+               <papertitle>Leveraging Diverse Semantic-based Audio Pretrained Models for Singing Voice Conversion
+               </papertitle>
+               <br>
+               <span class="underline">Xueyao Zhang</span>, Zihao Fang, <a class="black"
+                 href="https://www.yichenggu.com/">Yicheng
+                 Gu</a>, Haopeng Chen, Lexiao Zou, <a class="black"
+                 href="https://scholar.google.com/citations?user=KNqxVT0AAAAJ&hl=zh-CN">Liumeng Xue</a>, <a class="black"
+                 href="https://drwuz.com/">Zhizheng Wu</a>
+               <br>
+               <i>Proceedings of the IEEE Spoken Language Technology Workshop 2024</i>
+               <br>
+               <a href="https://arxiv.org/pdf/2310.11160.pdf">Preprint</a> /
+               <a href="https://github.com/open-mmlab/Amphion/tree/main/egs/svc/MultipleContentsSVC">Code</a> /
+               <a href="https://diversesemanticsvc.github.io/">Demo</a> /
+               <a href="https://huggingface.co/amphion/singing_voice_conversion">Pretrained Model</a> /
+               <a href="https://huggingface.co/spaces/amphion/singing_voice_conversion">HuggingFace Space</a> /
+               <a href="https://openxlab.org.cn/apps/detail/Amphion/singing_voice_conversion">OpenXLab App</a>
+               <br>
+               <span class="tldr">TL;DR: We propose to utilize multiple content features for singing voice conversion.
+               </span>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               <span class="tag">MM 2022</span>&nbsp;&nbsp;
+               <papertitle>Structure-Enhanced Pop Music Generation via Harmony-Aware Learning</papertitle>
+               <br>
+               <span class="underline">Xueyao Zhang</span>, <a class="black"
+                 href="https://scholar.google.com/citations?hl=zh-CN&user=vH9YLsAAAAAJ">Jinchao Zhang</a>, Yao Qiu, Li
+               Wang, Jie Zhou
+               <br>
+               <i>Proceedings of the ACM International Conference on Multimedia 2022</i>
+               <br>
+               <a href="https://doi.org/10.1145/3503161.3548084">PDF</a> /
+               <a href="https://arxiv.org/pdf/2109.06441.pdf">Preprint</a> /
+               <a href="https://github.com/RMSnow/HAT">Code</a> /
+               <a href="data/HAT/slides.pdf">Slides</a> /
+               <a href="data/HAT/demo.html">Demo</a>
+               <br>
+               <span class="tldr">TL;DR: We propose to learn harmony for generating form- and texture- enhanced pop
+                 music. </span>
+             </td>
+           </tr>
+           <td>
+             <subheading>Fake News Detection</subheading>
+           </td>
+           <tr>
+             <td valign="center">
+               <span class="tag">WWW 2021</span>&nbsp;&nbsp;
+               <span class="wow">> 300 citations</span>&nbsp;&nbsp;
+               <papertitle>Mining Dual Emotion for Fake News Detection</papertitle>
+               <!-- <span style="color: rgb(180, 16, 44);">(over 300 citations)</span> -->
+               <br>
+               <span class="underline">Xueyao Zhang</span>, <a class="black"
+                 href="https://scholar.google.com/citations?user=fSBdNg0AAAAJ">Juan Cao</a>, <a class="black"
+                 href="http://lixirong.net/">Xirong Li</a>, <a class="black" href="https://sheng-qiang.github.io/">Qiang
+                 Sheng</a>, Lei Zhong, and <a class="black" href="http://www.cs.iit.edu/~kshu/">Kai Shu</a>
+               <br>
+               <i>Proceedings of the Web Conference 2021</i>
+               <br>
+               <a href="https://dl.acm.org/doi/pdf/10.1145/3442381.3450004">PDF</a> /
+               <a href="https://github.com/RMSnow/WWW2021">Code</a> /
+               <a href="data/DualEmotion/www2021-dual-emotion-slides.pdf">Slides</a> /
+               <a href="data/DualEmotion/www2021-dual-emotion-video.mp4">Video</a> /
+               <a href="https://www.bilibili.com/video/BV13o4y1m7c3">Chinese Video</a>
+               <br>
+               <span class="tldr">TL;DR: We leverage both publisher emotion and social emotion for fake news detection.
+               </span>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               <span class="tag">CIKM 2021</span>&nbsp;&nbsp;
+               <papertitle>Integrating Pattern- and Fact-based Fake News Detection via Model Preference Learning
+               </papertitle>
+               <br>
+               <a class="black" href="https://sheng-qiang.github.io/">Qiang Sheng</a>*, <span class="underline">Xueyao
+                 Zhang</span>*, <a class="black" href="https://scholar.google.com/citations?user=fSBdNg0AAAAJ">Juan
+                 Cao</a>, and Lei Zhong (*: Equal Contribution)
+               <br>
+               <i>Proceedings of the ACM International Conference on Information and Knowledge Management 2021</i>
+               <br>
+               <a href="https://dl.acm.org/doi/10.1145/3459637.3482440">PDF</a> /
+               <a href="data/PrefFEND/cikm2021-PrefFEND-poster.pdf">Poster</a> /
+               <a href="https://github.com/ICTMCG/Pref-FEND">Code</a> /
+               <a href="https://zhuanlan.zhihu.com/p/414464291">Chinese Blog</a>
+               <br>
+               <span class="tldr">TL;DR: We propose a graph-based model preference learning framework to separately
+                 handle the pattern and fact indicators in fake news detection. </span>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               <span class="tag">ACL 2022</span>&nbsp;&nbsp;
+               <papertitle>Zoom Out and Observe: News Environment Perception for Fake News Detection</papertitle>
+               <br>
+               <a class="black" href="https://sheng-qiang.github.io/">Qiang Sheng</a>, <a class="black"
+                 href="https://scholar.google.com/citations?user=fSBdNg0AAAAJ">Juan Cao</a>, <span
+                 class="underline">Xueyao Zhang</span>, <a class="black"
+                 href="https://scholar.google.com/citations?user=PfmGvVQAAAAJ">Rundong Li</a>, <a class="black"
+                 href="https://scholar.google.com/citations?user=hGZwK0cAAAAJ">Danding Wang</a>, and <a class="black"
+                 href="https://easezyc.github.io/">Yongchun Zhu</a>
+               <br>
+               <i>Proceedings of the Annual Meeting of the Association for Computational Linguistics 2022</i>
+               <br>
+               <a href="https://aclanthology.org/2022.acl-long.311.pdf">PDF</a> /
+               <a href="https://sheng-qiang.github.io/data/NEP-Poster.pdf">Poster</a>
+               /
+               <a href="https://github.com/ICTMCG/News-Environment-Perception">Code</a>
+               /
+               <a href="https://www.bilibili.com/video/BV1MS4y1e7PY">Chinese Video</a>
+               /
+               <a href="https://mp.weixin.qq.com/s/aTFeuCYIpSoazeRi52jqew">Chinese Blog</a>
+               <br>
+               <span class="tldr">TL;DR: For the first time, we propose to perceive signals from the news environment for
+                 fake news detection. </span>
+             </td>
+           </tr>
+           <td>
+             &#128073 &nbsp;&nbsp;&nbsp;&nbsp; <a
+               href="https://scholar.google.com/citations?user=lf1udBcAAAAJ&hl=en">Full Publications</a>
+           </td>
+         </table>
+         <!-- Publications End -->
+ 
+         <!-- Presentation Begin -->
+         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
+           <tr>
+             <td>
+               <heading>Presentations and Talks</heading>
+             </td>
+           </tr>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <colgroup>
+             <col span="1" style="width: 15%;">
+             <col span="1" style="width: 85%;">
+           </colgroup>
+           <tr>
+             <td valign="center">
+               2024/04
+             </td>
+             <td valign="center">
+               I was honored to be invited to give a guest lecture, <b>Introduction of Sound, Speech, and Singing
+                 Voice</b> <a href="data/presentations/20240424_intro_speech.pdf">[Slides]</a>, at Professor <a
+                 href="https://myweb.cuhk.edu.cn/huangkanyuan"> Kanyuan Huang</a>'s course at CUHK-Shenzhen (2024/4/24).
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2024/02
+             </td>
+             <td valign="center">
+               I was honored to be invited to give talks, <b>A Comprehensive Guide to Amphion's Singing Voice
+                 Conversion (Amphion的歌声转换指南)</b>
+               <a href="data/presentations/202402_amphion_svc_tutorial.pdf">[Slides]</a>, at
+               <ul>
+                 <li>Professor <a href="https://www.linkedin.com/in/kelvin-qin-166b5021">Yong Qin</a>'s Lab at Nankai
+                   University (2024/01/04),</li>
+                 <li>Speech Home 语音之家 (2024/01/12),</li>
+                 <li>BAAI Talk 智源社区 (2024/01/16) <a href="https://event.baai.ac.cn/activities/751">[Recording]</a>,</li>
+                 <li>TechBeat 将门创投 (2024/02/07) <a href="https://www.techbeat.net/talk-info?id=848">[Recording]</a>,
+                 </li>
+                 <li>Professor <a href="https://liliu-avril.github.io/"> Li Liu</a>'s course at the Hong Kong University
+                   of
+                   Science and Technology, Guangzhou (2024/2/27).</li>
+               </ul>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2023/01
+             </td>
+             <td valign="center">
+               I drafted a singing voice conversion tutorial at <a href="https://drwuz.com/CSC3160/index.html">CSC3160
+                 (CUHK-Shenzhen)</a>. <a href="./data/SVC/tutorial.html">[Blog]</a>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2022/10
+             </td>
+             <td valign="center">
+               I got the <i>Best Presentation Award</i> at Huawei-CUHKSZ NLP/Speech Workshop by presenting my research
+               work,<br>
+               <b>Structure-Enhanced Pop Music Generation via Harmony-Aware Learning.</b>
+               <a href="data/HAT/slides.pdf">[Slides]</a>
+               <a href="data/presentations/20221015_award.pdf">[Award]</a>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2022/06
+             </td>
+             <td valign="center">
+               I gave a talk at two labs of ICT as an outstanding graduate, <br>
+               <b>如何做有新意的研究——以“做问题”的视角. </b>
+               <a href="https://mp.weixin.qq.com/s/Mfj4EITi9L99odmuWXGfDQ">[Chinese Blog]</a>
+               <a href="data/presentations/20220617_novel_research.pdf">[Chinese Slides]</a>
+               <br><br>
+               The talk was also presented at SDS Early Career Colloquium of CUHK-Shenzhen, <br>
+               <b>Towards a novel research in a problem-driven way. </b>
+               <a href="data/presentations/20221014_novel_research.pdf">[Slides]</a>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2022/05
+             </td>
+             <td valign="center">
+               My master's theis defense, <br>
+               <b>Research on Fake News Detection Based on Emotion (基于情感的虚假新闻检测方法研究). </b>
+               <a href="data/presentations/20220525_master_thesis_defense.pdf">[Chinese Slides]</a>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2022/01
+             </td>
+             <td valign="center">
+               I participated to release the theme song of WeChat Open Class 2022
+               as a co-producer, <a href="https://y.qq.com/n/ryqq/songDetail/000xeNJ53orPG2">Ru
+                 Wei（入微）</a>, which was composed by AI and sung by humans.
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2021/05
+             </td>
+             <td valign="center">
+               I gave a talk about <i>composition</i> at Pattern Recognition Center of Wechat AI, <br>
+               <b>How to create a pop song? (一首流行歌是如何创作的). </b>
+               <a href="data/presentations/wcpr-pop-music.pdf">[Chinese Slides]</a>
+             </td>
+           </tr>
+         </table>
+         <!-- Presentation End -->
+ 
+         <!-- Internship Begin -->
+         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
+           <tr>
+             <td>
+               <heading>Professional Experiences</heading>
+             </td>
+           </tr>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <colgroup>
+             <col span="1" style="width: 23%;">
+             <col span="1" style="width: 77%;">
+           </colgroup>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <colgroup>
+             <col span="1" style="width: 23%;">
+             <col span="1" style="width: 77%;">
+           </colgroup>
+           <tr>
+             <td valign="center">
+               <b>Meta Platforms, Inc</b>
+             </td>
+             <td>
+               Research Scientist Intern, Generative AI, @Menlo Park, California, USA (2024/05 ~ 2024/09)
+               <br>
+               <span class="tldr"><i>#Speech Generation#</i></span>
+               <br>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               <b>WeChat, Tencent</b>
+ 
+             </td>
+             <td>
+               Research Intern, Pattern Recognition Center of Wechat AI, @Beijing, China (2021/04 ~ 2022/02, 2023/06 ~
+               2024/05)
+               <br>
+               <span class="tldr"><i>#Music Generation#</i>, <i>#Singing Voice Conversion#</i></span>
+               <br>
+               <!-- <ul>
+                 <li> 2022/01 &nbsp;&nbsp;&nbsp;&nbsp; I participated to release the theme song of WeChat Open Class 2022
+                   as a co-producer, <a href="https://y.qq.com/n/ryqq/songDetail/000xeNJ53orPG2">Ru
+                     Wei（入微）</a>, which was composed by AI and sung by humans.</li>
+                 <li>2023/06 &nbsp;&nbsp;&nbsp;&nbsp; I was admitted by Tencent Rhino-Bird Talent Program 腾讯犀牛鸟精英人才计划
+                   (Top 50+ of China), supervised by <a
+                     href="https://scholar.google.com/citations?user=vH9YLsAAAAAJ&hl=en">Jinchao Zhang</a>.</li>
+               </ul> -->
+             </td>
+           </tr>
+ 
+         </table>
+         <!-- Internship End -->
+ 
+         <!-- Services Begin -->
+         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
+           <tr>
+             <td>
+               <heading>Services</heading>
+             </td>
+           </tr>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <colgroup>
+             <col span="1" style="width: 23%;">
+             <col span="1" style="width: 77%;">
+           </colgroup>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <colgroup>
+             <col span="1" style="width: 23%;">
+             <col span="1" style="width: 77%;">
+           </colgroup>
+           <tr>
+             <td valign="center">
+               Reviewer
+             </td>
+             <td>
+               Conferences:
+               <ul>
+                 <li>ACL Rolling Review</li>
+                 <li>CSCW 2021</li>
+                 <li>EMNLP 2021</li>
+                 <li>ICASSP 2023 <a href="data/presentations/2023_icassp_reviewer.pdf">(valuable reviewer)</a>, 2024,
+                   2025
+                 <li>ICLR 2025</li>
+                 <li>ICMC 2023</li>
+                 </li>
+                 <li>MM 2023, 2024</li>
+                 <li>NCMMSC 2023, 2024</li>
+               </ul>
+               Journals:
+               <ul>
+                 <li>EURASIP Journal on Audio, Speech, and Music Processing</li>
+                 <li>IEEE Signal Processing Letters (SPL)</li>
+                 <li>IEEE Transactions on Audio, Speech and Language Processing (TASLP)</li>
+                 <li>IEEE Transactions on Computational Social Systems (TCSS)</li>
+                 <li>Information Processing and Management (IP&M)</li>
+                 <li>Journal of Chinese Information Processing (中文信息学报)</li>
+               </ul>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               Student Volunteer
+             </td>
+             <td>
+               <li>IEEE Spoken Language Technology Workshop 2024</li>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               Teaching Assistant
+             </td>
+             <td>
+               <li>2017 Fall, Object-Oriented Programming (JAVA), Wuhan University</li>
+               <li>2022 Fall, CSC3100 Data Structures, CUHK-Shenzhen</li>
+               <li>2023 Spring, CSC3160/MDS6002 <a href="https://drwuz.com/CSC3160/index.html" ,>Fundamentals
+                   of Speech and Language Processing</a>, CUHK-Shenzhen. I got the <a
+                   href="data/presentations/20230521_ta_award.pdf">Best Teaching Assistant Award</a>.</li>
+               <li>2023 Fall, CSC4130 <a href="https://stevenhan1991.github.io/CSC4130/index.html">Introduction to
+                   Human-Computer Interaction</a>, CUHK-Shenzhen</li>
+               <li>2024 Spring, CSC4050 <a href="https://drwuz.com/csc4050/">Computing Capstone</a>, CUHK-Shenzhen </li>
+             </td>
+           </tr>
+         </table>
+         <!-- Services End -->
+ 
+         <!-- Education Begin -->
+         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
+           <tr>
+             <td>
+               <heading>Education</heading>
+             </td>
+           </tr>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <colgroup>
+             <col span="1" style="width: 23%;">
+             <col span="1" style="width: 77%;">
+           </colgroup>
+           <tr>
+             <td valign="center">
+               2022-
+             </td>
+             <td>
+               Ph.D. student in Data Science, supervised by
+               Professor <a href="http://www.drwuz.com/">Zhizheng Wu</a>,
+               <br>
+               <span>School of Data Science,
+                 <br>
+                 The Chinese University of Hong Kong, Shenzhen</span>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2019-2022
+             </td>
+             <td>
+               Master in Computer Application Technology (Research-based), supervised by Professor <a
+                 href="https://scholar.google.com/citations?user=fSBdNg0AAAAJ&hl=en">Juan Cao</a>, working closely with
+               Professor <a href="https://sheng-qiang.github.io/">Qiang Sheng</a>,
+               <br>
+               <span>Institute of Computing Technology Chinese Academy of
+                 Sciences,<br> University of Chinese
+                 Academy of Sciences</span>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2015-2019
+             </td>
+             <td>
+               B.Eng. in Software Engineering,
+               <br>
+               <span>School of Computer Science,
+                 <br>
+                 Wuhan University</span>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2012-2015
+             </td>
+             <td>
+               <span>Jiyuan No.1 Middle School of Henan</span>
+             </td>
+           </tr>
+         </table>
+         <!-- Education End -->
+ 
+         <!-- Awards Begin -->
+         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
+           <tr>
+             <td>
+               <heading>Honors and Awards</heading>
+             </td>
+           </tr>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <colgroup>
+             <col span="1" style="width: 23%;">
+             <col span="1" style="width: 77%;">
+           </colgroup>
+ 
+           <tr>
+             <td valign="center">
+               2023
+             </td>
+             <td>
+               Admitted by Tencent Rhino-Bird Talent Program 腾讯犀牛鸟精英人才计划
+               (Top 50+ of China)
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2022
+             </td>
+             <td>
+               Outstanding Graduate, University of Chinese Academy of Sciences & Beijing Municipal Education Commission
+               (Top 5%)
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2021
+             </td>
+             <td>
+               National Graduate Scholarship, Ministry of Education of China (Top 0.2%)
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2020
+             </td>
+             <td>
+               Third place at Campus Singer Competition, University of Chinese Academy of Sciences (Top 3 among over
+               50,000)
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2019
+             </td>
+             <td>
+               Outstanding Graduate, Wuhan University (Top 10%)
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2019
+             </td>
+             <td>
+               Excellent Bachelor Thesis, Wuhan University (Top 5%)
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2016
+             </td>
+             <td>
+               National Undergraduate Scholarship, Ministry of Education of China (Top 0.2%)
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               2014
+             </td>
+             <td>
+               First price in Chinese High School Mathematics League (Top 50 in Henan Province)
+             </td>
+           </tr>
+ 
+         </table>
+         <!-- Awards End -->
+ 
+         <!-- Blog Begin -->
+         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
+           <tr>
+             <td>
+               <heading>Blogs</heading>
+             </td>
+           </tr>
+         </table>
+         <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+           <colgroup>
+             <col span="1" style="width: 23%;">
+             <col span="1" style="width: 77%;">
+           </colgroup>
+           <tr>
+             <td valign="center">
+               <b>#年终总结#</b>
+             </td>
+             <td>
+               2023 <a href="https://mp.weixin.qq.com/s/QMKCvh5NCSAI_K4W4M-Ohg">《2023与兔年：开端、挑战与不经意间》</a>
+               <br>
+               2022 <a href="https://mp.weixin.qq.com/s/4UL5uDBJtC2cF-dYdv7ghg">《2022年：伤痛、时间与起点》</a>
+               <br>
+               2021 <a href="https://mp.weixin.qq.com/s/CGncuXb09ER4vy3gCgrBAw">《2021年：收获、决定与困惑
+                 》</a>
+               <br>
+               2020 <a href="https://mp.weixin.qq.com/s/ukN8Xz9HN8lPj0ladySx-Q">《去年》</a>
+               <br>
+               2019 <a href="https://mp.weixin.qq.com/s/iJd205veSLOb1L-7Y1HA2Q">《2019大事记》</a>
+               <br>
+               2018 <a href="https://mp.weixin.qq.com/s/GqvxMHr1hSWimPHfZmem0A">《请回答2018》</a>
+               <br>
+               2017 <a href="https://mp.weixin.qq.com/s/7IlpOxBG_LyU3RUkefNXuA">《2017流水账》</a>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               <b>#哲学思考#</b>
+             </td>
+             <td>
+               2020/02/10 <a href="https://mp.weixin.qq.com/s/RkZcWFEUgoq5XoINFVezLw">
+                 《对人工智能艺术创作的哲学思考》</a>
+               <br>
+               2016/11/24 <a href="https://mp.weixin.qq.com/s/JS1cvGUdqmgjrfvXakxHiw">《为什么有有，没有没有》</a>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               <b>#关于大学#</b>
+             </td>
+             <td>
+               2019/10/02 <a href="https://mp.weixin.qq.com/s/ZW-lzIFjBYfw55wBea2Nzw">《后大学时代》</a>
+               <br>
+               2018/08/04 <a href="https://mp.weixin.qq.com/s/zycLdddVA5OnecODkpVNdQ"> 《的大学》</a>
+             </td>
+           </tr>
+           <tr>
+             <td valign="center">
+               <b>#关于高考#</b>
+             </td>
+             <td>
+               2017/10/20 <a href="https://mp.weixin.qq.com/s/9s4JWWq5h761GvI4Bfb3HQ">《后高考时代｜感情篇》</a>
+               <br>
+               2016/05/02 <a href="https://mp.weixin.qq.com/s/JS1cvGUdqmgjrfvXakxHiw"> 《后高考时代｜思辨篇》</a>
+               <br>
+               2016/04/26 <a href="https://mp.weixin.qq.com/s/ZK0qRwyzCl41WjUQN9dPrw"> 《后高考时代｜离别篇》</a>
+             </td>
+           </tr>
+         </table>
+         <!-- Blog End -->
+ 
+ 
+         <table width="100%" align="center" border="0" cellpadding="12">
+           <tr>
+             <td width="100%" valign="center">
+               <p class="footer">
+                 Design: <a href="https://jonbarron.info/" style="color: #777; font-size: 14px;">Jon
+                   Barron</a>, <a href="https://liminyang.web.illinois.edu/  "
+                   style="color: #777; font-size: 14px;">Limin Yang</a>, <a href="https://sheng-qiang.github.io/"
+                   style="color: #777; font-size: 14px;">Qiang Sheng</a>, and <a href="https://www.zhangxueyao.com/"
+                   style="color: #777; font-size: 14px;">Xueyao
+                   Zhang</a>.<br>
+                 Last updated:
+                 <script>
+                   t = new Date(document.lastModified).toLocaleDateString()
+                   document.write(t);
+                 </script>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <span id="busuanzi_container_site_pv">#Views: <span id="busuanzi_value_site_pv"></span>, #Visitors:
+                   <span id="busuanzi_value_site_uv"></span></span> (2021/8/1~)
+               </p>
+             </td>
+           </tr>
+         </table>
+       </td>
+     </tr>
+   </table>
+ </body>
+ 
+ </html>
