@@ -58,23 +58,27 @@
        color: rgb(180, 16, 44);
        text-decoration: none;
      }
- 
-     body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center; /* 水平居中 */
-            align-items: center; /* 垂直居中 */
-            
-            
-        }
-        .container {
-            max-width: 800px; /* 最大宽度 */
-            width: 100%; /* 自适应宽度 */
-            padding: 20px; /* 内边距 */
-            background-color: white; /* 内容背景颜色 */
-          
-        }
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center; /* 水平居中 */
+      min-height: 100vh; /* 确保内容可以垂直滚动 */
+      overflow-y: auto; /* 显示垂直滚动条 */
+      /* background-color: #f8f9fa; 添加背景色以便于查看边界 */
+    }
+
+    .container {
+      max-width: 1200px; /* 增大最大宽度 */
+      width: 70%; /* 自适应宽度 */
+      padding: 20px; /* 内边距 */
+      background-color: white; /* 内容背景颜色 */
+      margin: 20px 0; /* 上下边距 */
+      /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 添加阴影增强视觉效果 */
+    }
+
      td,
      th,
      tr,
@@ -204,7 +208,7 @@
 <body>
   <div class="container">
 
-    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
+    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12",style="table-layout:auto;">
         <tr>
           <td>
             <heading>Full Publication</heading>
@@ -212,7 +216,7 @@
         </tr>
     </table>
       
-    <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+    <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:auto;">
         <tr>
             <td>
                 My research interest includes <i><b>black-box optimizaiton algorithms</b></i>:
@@ -227,7 +231,6 @@
                     <li><i><b>Human-AI Coordination</b></i>.</li>
                 </ul>
                 <i><sup>#</sup> Equal Contribution 
-                  <!-- ; * Corresponding Author</i> -->
             </td>
         </tr>
     </table>
@@ -348,8 +351,6 @@
       </td>
     </tr>
 
-
-
       <td>
         <subheading>Conference Paper</subheading>
       </td>
@@ -370,7 +371,7 @@
           (A preliminary version has appeared at the 2nd Workshop on Foundation Models in the Wild at ICLR’25, <b>Oral presentation</b>)
           <br>
           <a href="https://openreview.net/forum?id=NOV32X1Rq3">PDF</a> /
-          <a href="https://github.com/lamda-bbo/uniso">Code</a>
+          <a href="https://github.com/trxcc/universal-offline-bbo">Code</a>
           <br>
               <span class="tldr">TL;DR: We leverage the embeddings of large language model to achieve universal offline optimization.
               </span>
