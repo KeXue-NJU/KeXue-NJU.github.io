@@ -966,6 +966,355 @@
         </table>
         <!-- Services End -->
 
+        <!-- Busy Schedule Begin -->
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12">
+          <tr>
+            <td>
+              <heading>Busy Schedule</heading>
+            </td>
+          </tr>
+        </table>
+        <table width="100%" align="center" border="0" cellpadding="12" style="table-layout:fixed;">
+          <tr>
+            <td>
+              <div id="busy-schedule" class="cooperation-call">
+                Loading calendar...
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <script>
+          (function () {
+            const el = document.getElementById('busy-schedule');
+            if (!el) return;
+
+            const calendarWebcal =
+              "webcal://p212-caldav.icloud.com.cn/published/2/MTIxNDA5NjcxOTIxMjE0MPEGcYfjlrJuQOgt74xh6ASGbzV5-l8PDkss4iFmL3HOp5PCSh--TK8rIN44tFoKRiTjaT1Gkbljxu1zCOX016A";
+            const calendarHttps = calendarWebcal.replace(/^webcal:\/\//, "https://");
+            const calendarProxy = "https://r.jina.ai/" + calendarHttps;
+
+            function escapeHtml(s) {
+              return String(s)
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;")
+                .replaceAll("'", "&#39;");
+            }
+
+            function unfoldIcs(text) {
+              return text.replace(/\r?\n[ \t]/g, "");
+            }
+
+            function parseIcsDate(value) {
+              if (!value) return null;
+              const v = value.trim();
+              const m =
+                /^(\d{4})(\d{2})(\d{2})(?:T(\d{2})(\d{2})(\d{2}))?(Z)?$/.exec(v);
+              if (!m) return null;
+              const [_, y, mo, d, hh, mm, ss, z] = m;
+              const year = Number(y);
+              const month = Number(mo) - 1;
+              const day = Number(d);
+              const hour = hh ? Number(hh) : 0;
+              const min = mm ? Number(mm) : 0;
+              const sec = ss ? Number(ss) : 0;
+              return z
+                ? new Date(Date.UTC(year, month, day, hour, min, sec))
+                : new Date(year, month, day, hour, min, sec);
+            }
+
+            function extractEventsFromIcs(icsText) {
+              const unfolded = unfoldIcs(icsText);
+              const blocks = unfolded.split(/BEGIN:VEVENT\r?\n/).slice(1);
+              const events = [];
+              for (const b of blocks) {
+                const block = "BEGIN:VEVENT\n" + b;
+                const dtStartLine = block.match(/\nDTSTART(?:;[^\n:]*)?:(.+)\r?\n/);
+                const dtEndLine = block.match(/\nDTEND(?:;[^\n:]*)?:(.+)\r?\n/);
+                const start = parseIcsDate(dtStartLine?.[1]);
+                const end = parseIcsDate(dtEndLine?.[1]);
+                if (!start || !end) continue;
+                events.push({ start, end });
+              }
+              events.sort((a, b) => a.start - b.start);
+              return events;
+            }
+
+            function startOfWeekMonday(d) {
+              const x = new Date(d);
+              x.setHours(0, 0, 0, 0);
+              const day = x.getDay(); // 0 Sun ... 6 Sat
+              const diff = (day + 6) % 7; // Mon=0 ... Sun=6
+              x.setDate(x.getDate() - diff);
+              return x;
+            }
+
+            function addDays(d, n) {
+              const x = new Date(d);
+              x.setDate(x.getDate() + n);
+              return x;
+            }
+
+            function sameDay(a, b) {
+              return (
+                a.getFullYear() === b.getFullYear() &&
+                a.getMonth() === b.getMonth() &&
+                a.getDate() === b.getDate()
+              );
+            }
+
+            function fmtDayHeader(d) {
+              const wd = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+              const i = (d.getDay() + 6) % 7;
+              const mm = String(d.getMonth() + 1).padStart(2, "0");
+              const dd = String(d.getDate()).padStart(2, "0");
+              return `${wd[i]} ${mm}/${dd}`;
+            }
+
+            function renderWeek(events, weekStart) {
+              const hourStart = 13; // 13:00
+              const hourEnd = 20; // 20:00 (display through 20:00)
+              const pixelsPerHour = 48;
+              const headerHeight = 34;
+              const timeColWidth = 68;
+
+              const days = Array.from({ length: 7 }, (_, i) => addDays(weekStart, i));
+              const weekEnd = addDays(weekStart, 7);
+
+              // Filter events intersecting this week
+              const inWeek = events.filter((e) => e.end > weekStart && e.start < weekEnd);
+
+              const today = new Date();
+              const dayHeaders = days
+                .map((d) => {
+                  const isToday = sameDay(d, today);
+                  return `<div class="busy-day-header${isToday ? " busy-today" : ""}">${escapeHtml(
+                    fmtDayHeader(d)
+                  )}</div>`;
+                })
+                .join("");
+
+              const hourLabels = Array.from({ length: hourEnd - hourStart + 1 }, (_, i) => {
+                const h = hourStart + i;
+                return `<div class="busy-hour-label" style="top:${(h - hourStart) *
+                  pixelsPerHour}px;">${String(h).padStart(2, "0")}:00</div>`;
+              }).join("");
+
+              const gridHeight = (hourEnd - hourStart) * pixelsPerHour;
+              const visStartMin = hourStart * 60;
+              const visEndMin = hourEnd * 60;
+              /** merge gaps ≤ this many minutes so adjacent busy slots look like one bar */
+              const mergeGapMins = 12;
+
+              // Per-day intervals in minutes-from-midnight, then merge → one coherent column per day
+              const intervalsByDay = Array.from({ length: 7 }, () => []);
+
+              for (const e of inWeek) {
+                for (let di = 0; di < 7; di++) {
+                  const dayStart = new Date(days[di]);
+                  const dayEnd = addDays(dayStart, 1);
+                  const segStart = e.start > dayStart ? e.start : dayStart;
+                  const segEnd = e.end < dayEnd ? e.end : dayEnd;
+                  if (segEnd <= segStart) continue;
+
+                  // Skip all-day events (do not show)
+                  const isAllDay =
+                    segStart.getHours() === 0 &&
+                    segStart.getMinutes() === 0 &&
+                    segEnd.getHours() === 0 &&
+                    segEnd.getMinutes() === 0 &&
+                    segEnd.getTime() - segStart.getTime() >= 24 * 3600 * 1000;
+                  if (isAllDay) continue;
+
+                  const sMin =
+                    segStart.getHours() * 60 +
+                    segStart.getMinutes() +
+                    segStart.getSeconds() / 60;
+                  const eMin =
+                    segEnd.getHours() * 60 +
+                    segEnd.getMinutes() +
+                    segEnd.getSeconds() / 60;
+                  const a = Math.max(sMin, visStartMin);
+                  const b = Math.min(eMin, visEndMin);
+                  if (b <= a) continue;
+                  intervalsByDay[di].push({ a, b });
+                }
+              }
+
+              function mergeIntervals(intervals) {
+                if (!intervals.length) return [];
+                intervals.sort((x, y) => x.a - y.a);
+                const out = [{ a: intervals[0].a, b: intervals[0].b }];
+                for (let i = 1; i < intervals.length; i++) {
+                  const cur = intervals[i];
+                  const last = out[out.length - 1];
+                  if (cur.a <= last.b + mergeGapMins) {
+                    last.b = Math.max(last.b, cur.b);
+                  } else {
+                    out.push({ a: cur.a, b: cur.b });
+                  }
+                }
+                return out;
+              }
+
+              const dayColumns = [];
+              for (let di = 0; di < 7; di++) {
+                const merged = mergeIntervals(intervalsByDay[di]);
+                const rendered = merged.map(({ a, b }) => {
+                  const top = ((a - visStartMin) / 60) * pixelsPerHour;
+                  const height = Math.max(
+                    10,
+                    ((b - a) / 60) * pixelsPerHour
+                  );
+                  return `<div class="busy-block" style="top:${top}px;height:${height}px;"></div>`;
+                });
+                dayColumns.push(
+                  `<div class="busy-daycol">${rendered.join("")}</div>`
+                );
+              }
+
+              el.innerHTML = `
+                <style>
+                  .busy-wrap{position:relative;}
+                  .busy-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:10px;}
+                  .busy-toolbar .nav-btn{padding:6px 12px;}
+                  .busy-range{font-weight:600;}
+                  .busy-grid{position:relative;border:1px solid #ddd;border-radius:6px;overflow:hidden;background:#fff;}
+                  .busy-header{display:grid;grid-template-columns:${timeColWidth}px repeat(7, 1fr);border-bottom:1px solid #ddd;background:#F3F7FC;}
+                  .busy-header .busy-timehead{height:${headerHeight}px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#555;border-right:1px solid #e6e6e6;}
+                  .busy-day-header{height:${headerHeight}px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#333;border-right:1px solid #e6e6e6;}
+                  .busy-day-header:last-child{border-right:none;}
+                  .busy-today{color:rgb(180, 16, 44);font-weight:700;}
+                  .busy-body{position:relative;height:${gridHeight}px;}
+                  .busy-hour-label{position:absolute;left:0;width:${timeColWidth}px;box-sizing:border-box;padding-right:10px;text-align:right;transform:translateY(-50%);font-size:15px;font-weight:700;color:#1a1a1a;letter-spacing:0.02em;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;line-height:1.2;}
+                  .busy-cols{position:absolute;left:${timeColWidth}px;top:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(7, 1fr);}
+                  .busy-daycol{position:relative;border-right:1px solid #eee;}
+                  .busy-daycol:last-child{border-right:none;}
+                  .busy-hline{position:absolute;left:0;right:0;height:1px;background:#eee;}
+                  .busy-block{position:absolute;left:4px;right:4px;width:auto;background:#c8c8c8;border-radius:4px;box-sizing:border-box;overflow:hidden;border:1px solid #b0b0b0;}
+                  .busy-nowline{position:absolute;left:0;right:0;height:2px;background:rgb(180, 16, 44);z-index:5;}
+                  .busy-nowdot{position:absolute;left:-5px;top:-4px;width:10px;height:10px;border-radius:50%;background:rgb(180, 16, 44);}
+                </style>
+                <div class="busy-wrap">
+                  <div class="busy-toolbar">
+                    <div>
+                      <button class="nav-btn" id="busyPrev">Prev</button>
+                      <button class="nav-btn" id="busyNext">Next</button>
+                      <button class="nav-btn" id="busyThis">This week</button>
+                    </div>
+                    <div class="busy-range" id="busyRange"></div>
+                  </div>
+                  <div class="busy-grid">
+                    <div class="busy-header">
+                      <div class="busy-timehead"></div>
+                      ${dayHeaders}
+                    </div>
+                    <div class="busy-body">
+                      ${hourLabels}
+                      <div class="busy-cols">
+                        ${dayColumns.join("")}
+                      </div>
+                      ${Array.from({ length: hourEnd - hourStart + 1 }, (_, i) => {
+                        const h = hourStart + i;
+                        const top = (h - hourStart) * pixelsPerHour;
+                        return `<div class="busy-hline" style="top:${top}px;"></div>`;
+                      }).join("")}
+                    </div>
+                  </div>
+                </div>
+              `;
+
+              const rangeEl = document.getElementById("busyRange");
+              const ws = new Date(weekStart);
+              const we = addDays(ws, 6);
+              const mm1 = String(ws.getMonth() + 1).padStart(2, "0");
+              const dd1 = String(ws.getDate()).padStart(2, "0");
+              const mm2 = String(we.getMonth() + 1).padStart(2, "0");
+              const dd2 = String(we.getDate()).padStart(2, "0");
+              rangeEl.textContent = `${ws.getFullYear()}/${mm1}/${dd1} - ${we.getFullYear()}/${mm2}/${dd2}`;
+            }
+
+            function renderWeekWithNav(events) {
+              let currentWeekStart = startOfWeekMonday(new Date());
+              let nowTimer = null;
+
+              function updateNowLine() {
+                const now = new Date();
+                const weekEnd = addDays(currentWeekStart, 7);
+                const withinWeek = now >= currentWeekStart && now < weekEnd;
+                const dayIdx = withinWeek ? (now.getDay() + 6) % 7 : -1;
+                const hourStart = 13;
+                const hourEnd = 20;
+                const pixelsPerHour = 48;
+                const hour = now.getHours() + now.getMinutes() / 60;
+                const y = (hour - hourStart) * pixelsPerHour;
+
+                // Clear existing
+                document.querySelectorAll(".busy-nowline").forEach((n) => n.remove());
+
+                if (dayIdx < 0) return;
+                if (hour < hourStart || hour >= hourEnd) return;
+
+                const cols = document.querySelectorAll(".busy-daycol");
+                const col = cols[dayIdx];
+                if (!col) return;
+
+                const line = document.createElement("div");
+                line.className = "busy-nowline";
+                line.style.top = `${y}px`;
+
+                const dot = document.createElement("div");
+                dot.className = "busy-nowdot";
+                line.appendChild(dot);
+
+                col.appendChild(line);
+              }
+
+              function draw() {
+                renderWeek(events, currentWeekStart);
+                updateNowLine();
+                if (nowTimer) clearInterval(nowTimer);
+                nowTimer = setInterval(updateNowLine, 60 * 1000);
+                document.getElementById("busyPrev").onclick = () => {
+                  currentWeekStart = addDays(currentWeekStart, -7);
+                  draw();
+                };
+                document.getElementById("busyNext").onclick = () => {
+                  currentWeekStart = addDays(currentWeekStart, 7);
+                  draw();
+                };
+                document.getElementById("busyThis").onclick = () => {
+                  currentWeekStart = startOfWeekMonday(new Date());
+                  draw();
+                };
+              }
+
+              draw();
+            }
+
+            function fetchText(url) {
+              return fetch(url, { cache: "no-store" }).then((r) => {
+                if (!r.ok) throw new Error("HTTP " + r.status);
+                return r.text();
+              });
+            }
+
+            fetchText(calendarHttps)
+              .catch(() => fetchText(calendarProxy))
+              .then((text) => {
+                const events = extractEventsFromIcs(text);
+                renderWeekWithNav(events);
+              })
+              .catch(() => {
+                el.textContent =
+                  "Busy schedule cannot be loaded in-browser (e.g. CORS). Try opening the calendar in your own app.";
+              });
+          })();
+        </script>
+        <!-- Busy Schedule End -->
+
          <table width="100%" align="center" border="0" cellpadding="12">
            <tr>
              <td width="100%" valign="center">
