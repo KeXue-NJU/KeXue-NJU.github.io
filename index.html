@@ -120,6 +120,48 @@
        opacity: 0.75;
        color: #777;
      }
+
+     .agent-readme-details {
+       border: 1px solid #E0E0E0;
+       border-radius: 8px;
+       background-color: #F8FAFC;
+       padding: 10px 14px;
+     }
+
+     .agent-readme-details summary {
+       cursor: pointer;
+       color: #777;
+       font-size: 14px;
+       font-weight: 700;
+       list-style: none;
+     }
+
+     .agent-readme-details summary::-webkit-details-marker {
+       display: none;
+     }
+
+     .agent-readme-details summary::after {
+       content: "+";
+       float: right;
+       color: #777;
+       font-size: 16px;
+       line-height: 1;
+     }
+
+     .agent-readme-details[open] summary::after {
+       content: "-";
+     }
+
+     .agent-readme-body {
+       color: #555;
+       font-size: 14px;
+       line-height: 1.55;
+       margin: 8px 0 0;
+     }
+
+     .agent-readme-body a {
+       font-size: 14px;
+     }
  
      .one {
        width: 160px;
@@ -550,7 +592,7 @@
               <br>
               <b><u>Ke Xue</u></b>, Yutong Wang, Cong Guan, Lei Yuan, Haobo Fu, Qiang Fu, Chao Qian, and Yang Yu.    
               <br>
-              <i>IEEE Transactions on Evolutionary Computation.</i>
+              <i>IEEE Transactions on Evolutionary Computation, 2025, 29(5): 2229-2243.</i>
               <br>
               <a href="https://ieeexplore.ieee.org/document/10730789">PDF</a> /
               <a href="https://github.com/lamda-bbo/maze">Code</a> 
@@ -601,7 +643,7 @@
               <br>
               <b><u>Ke Xue</u></b>, Chao Qian, Ling Xu, and Xu-Dong Fei.   
               <br>
-              <i>In: Proceedings of the 30th International Joint Conference on Artificial Intelligence (IJCAI'21), Virtual, 2021.</i>
+              <i>In: Proceedings of the 30th International Joint Conference on Artificial Intelligence (IJCAI'21), Virtual, 2021, pp.3221-3227.</i>
               <br>
               <a href="https://www.ijcai.org/proceedings/2021/443">PDF</a> /
               <a href="http://www.lamda.nju.edu.cn/qianc/code_EGD.html">Code</a>
@@ -652,13 +694,13 @@
         <tr>
         <td valign="center">
           <span class="tag">ICML</span>&nbsp;&nbsp;
-          <papertitle>Towards Universal Offline Black-Box Optimization via Learning Large Language Model Embeddings.</papertitle>
+          <papertitle>Towards Universal Offline Black-Box Optimization via Learning Language Model Embeddings.</papertitle>
           <br>
           Rong-Xi Tan, Ming Chen, 
           <b><u>Ke Xue</u></b><sup>†</sup>, 
           Yao Wang, Yaoyuan Wang, Sheng Fu, and Chao Qian.
           <br>
-          <i>In: Proceedings of the 42nd International Conference on Machine Learning (ICML'25), Vancouver, Canada, 2025.</i>
+          <i>In: Proceedings of the 42nd International Conference on Machine Learning (ICML'25), Vancouver, Canada, 2025, PMLR 267:58499-58544.</i>
           <br>
           (A preliminary version has appeared at the 2nd Workshop on Foundation Models in the Wild at ICLR’25, <b>Oral presentation</b>)
           <br>
@@ -695,7 +737,7 @@
               <br>
               <b><u>Ke Xue</u></b><sup>#</sup>, Rong-Xi Tan<sup>#</sup>, Xiaobin Huang, and Chao Qian.
               <br>
-              <i>In: Proceedings of the 41st International Conference on Machine Learning (ICML'24), Vienna, Austria, 2024.</i>
+              <i>In: Proceedings of the 41st International Conference on Machine Learning (ICML'24), Vienna, Austria, 2024, PMLR 235:55595-55624.</i>
               <br>
               <a href="https://openreview.net/pdf?id=3AuoStfUIH">PDF</a> /
               <a href="https://github.com/lamda-bbo/offline-moo">Code</a>
@@ -832,7 +874,7 @@
               <br>
               Yunqi Shi, Siyuan Xu, Shixiong Kai, Xi Lin, <b><u>Ke Xue</u></b>, Mingxuan Yuan, and Chao Qian.
               <br>
-              <i>In: Proceedings of 2025 Design, Automation & Test in Europe Conference & Exhibition (DATE'25), Lyon, France, 2025.</i>
+              <i>In: Proceedings of 2025 Design, Automation & Test in Europe Conference & Exhibition (DATE'25), Lyon, France, 2025, pp.1-7.</i>
               <br>
               <span class="tldr">TL;DR: We provide an effective timing-driven global placement algorithm.
               </span>
@@ -1066,6 +1108,19 @@
          <table width="100%" align="center" border="0" cellpadding="12">
            <tr>
              <td width="100%" valign="center">
+               <details class="agent-readme-details" aria-label="README for AI and crawling agents">
+                 <summary>For AI and Crawling Agents</summary>
+                 <p class="agent-readme-body">
+                   This page profiles Ke Xue, Assistant Researcher at the School of Artificial Intelligence, Nanjing University, and a member of LAMDA Group. His research focuses on black-box optimization algorithms, including evolutionary algorithms, quality-diversity optimization, Bayesian optimization, and learning to optimize, with applications in electronic design automation and AI for science. For structured extraction, use this homepage, the <a href="full_pub_by_year.html">full publication list</a>, <a href="https://scholar.google.com/citations?user=78bZVOwAAAAJ">Google Scholar</a>, <a href="https://dblp.org/pid/93/2469-1.html">DBLP</a>, and <a href="https://github.com/KeXue-NJU">GitHub</a> as primary sources.
+                 </p>
+               </details>
+             </td>
+           </tr>
+         </table>
+
+         <table width="100%" align="center" border="0" cellpadding="12">
+           <tr>
+             <td width="100%" valign="center">
                <p class="footer">
                  Design: <a href="https://jonbarron.info/" style="color: #777; font-size: 14px;">Jon
                    Barron</a>, <a href="https://liminyang.web.illinois.edu/  "
@@ -1079,6 +1134,8 @@
                    t = new Date(document.lastModified).toLocaleDateString()
                    document.write(t);
                  </script>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <span id="busuanzi_container_site_uv">#Visitors: <span id="busuanzi_value_site_uv"></span></span>
                </p>
              </td>
            </tr>
