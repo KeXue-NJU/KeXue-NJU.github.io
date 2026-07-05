@@ -166,8 +166,10 @@
 
     .shadow-box {
             display: inline-block;
+            position: relative;
             padding: 0px;
             border-radius: 8px;
+            overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
         }
@@ -183,7 +185,26 @@
             font-size: 14px; /* 小字的字体大小 */
             color: #555; /* 字体颜色 */
             text-align: center; /* 使文本居中 */
-            margin-top: 10px; /* 上方间距 */
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0;
+            padding: 8px 10px;
+            background: rgba(255, 255, 255, 0.88);
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            pointer-events: none;
+        }
+        .caption a {
+            font-size: 14px;
+            pointer-events: auto;
+        }
+        .shadow-box:hover .caption,
+        .shadow-box:focus-within .caption {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         img.signature {
@@ -220,10 +241,8 @@
             <td valign="right">
                 <div class="shadow-box">
                     <img src="xuek%20@%20LAMDA_files/xk_gosau.jpg" alt="Image">
-                    
+                    <p class="caption"><i>Gosau, Austria</i>. Photoed by <a href="https://zyushun.github.io/" style="font-size: 14px;">Yushun</a></p>
                 </div>
-                <p class="caption"> <i>Gosau, Austria</i>. Photoed by <a href="
-                    https://zyushun.github.io/" style="font-size: 14px;" >Yushun</p>
             </td>
                 
             <td valign="left">
