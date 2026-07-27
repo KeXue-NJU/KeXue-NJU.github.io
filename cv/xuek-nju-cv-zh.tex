@@ -1,0 +1,142 @@
+% 薛轲中文学术简历
+% Build: xelatex xuek-nju-cv-zh.tex
+\documentclass[10pt,a4paper,fontset=fandol]{ctexart}
+
+% Times New Roman has a closer visual weight and x-height to Songti SC than
+% Latin Modern, which keeps mixed strings such as "DATE 2025 最佳论文奖" balanced.
+\setmainfont[Scale=1.05,Ligatures=TeX]{Times New Roman}
+\setCJKmainfont[AutoFakeSlant=0.2]{Songti SC}
+\setCJKsansfont{Heiti SC}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+
+\newcommand{\cvname}[1]{{\Large\bfseries #1}}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{0.65em}%
+  \noindent{\heiti\large #1}\\[-0.15em]
+  \rule{\textwidth}{0.4pt}%
+  \vspace{0.4em}%
+}
+
+\newcommand{\cventry}[3]{%
+  \noindent\textbf{#1}\hfill\textit{#2}\\[-0.05em]
+  #3\par
+}
+
+\newlist{cvbullet}{itemize}{1}
+\setlist[cvbullet]{label=\textbullet, leftmargin=1.15em, itemsep=0.18em, topsep=0.12em, parsep=0pt, partopsep=0pt}
+
+\begin{document}
+\pagestyle{empty}
+
+\noindent
+{\cvname{薛轲}}\\[0.4em]
+\textbf{地址：}中国江苏省南京市仙林大道163号\\
+\textbf{邮箱：}\href{mailto:xuek@lamda.nju.edu.cn}{xuek@lamda.nju.edu.cn}\\
+\textbf{个人主页：}\href{https://www.lamda.nju.edu.cn/xuek/}{www.lamda.nju.edu.cn/xuek/}\\
+\textbf{学术主页：}
+\href{https://scholar.google.com/citations?user=78bZVOwAAAAJ}{Google Scholar} /
+\href{https://dblp.org/pid/93/2469-1.html}{DBLP} /
+\href{https://github.com/KeXue-NJU}{GitHub}
+
+\cvsection{工作经历}
+\cventry{南京大学}{2026年7月 -- 至今}{%
+  人工智能学院，讲师（毓秀青年学者），江苏南京。}
+
+\cvsection{教育经历}
+\cventry{南京大学}{2019年9月 -- 2026年6月}{%
+  人工智能学院，计算机科学与技术博士；导师：钱超教授，江苏南京。}
+\cventry{中山大学}{2015年9月 -- 2019年6月}{%
+  数学学院，数学与应用数学学士，广东广州。}
+
+\cvsection{研究方向}
+机器学习、演化计算，具体包括质量-多样性优化、贝叶斯优化与学习优化，及其在电子设计自动化和AI for Science中的应用。
+
+\cvsection{学术论文}
+
+\textit{$^*$表示共同贡献；$^\dagger$表示通讯作者。}
+
+\textit{期刊论文}
+\begin{cvbullet}
+  \item Ke Xue$^*$, Ruo-Tong Chen$^*$, Rong-Xi Tan$^*$, Xi Lin, Yunqi Shi, Siyuan Xu, Mingxuan Yuan, and Chao Qian. BBOPlace-Bench: Benchmarking Black-Box Optimization for Chip Placement. \textit{IEEE Transactions on Evolutionary Computation}，已录用。
+  \item Ke Xue$^*$, Xi Lin$^*$, Yunqi Shi, Shixiong Kai, Siyuan Xu, Mingxuan Yuan, and Chao Qian. Hybrid Optimization for Chip Global Placement（基于混合优化的芯片全局布局方法）. \textit{Science China Information Sciences（中国科学：信息科学）}，已录用。
+  \item Yunqi Shi, Xi Lin, Zhiang Wang, Siyuan Xu, Shixiong Kai, Yao Lai, Chengrui Gao, Ke Xue, Mingxuan Yuan, Chao Qian, and Zhi-Hua Zhou. Re$^2$MaP: Macro Placement by Recursively Prototyping and Packing Tree-based Relocating. \textit{IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems}，已录用。
+  \item Zhengbo Lu$^*$, Ke Xue$^*$, Yiying Deng$^*$, Junxuan Fan, Peiyue Fang, Bridget S. Wade, Laia Alegret, Michael J. Benton, Yuchang Wu, Chao Qian, Xudong Hou, Yukun Shi, Peter M. Sadler, Huiqing Xu, Zhi-Hua Zhou, and Shuzhong Shen. Complex Marine Ecological Response during the Eocene-Oligocene Revealed by Global Foraminiferal Record. \textit{Nature Communications}, 2026, 17: 3954.
+  \item Zhengbo Lu, Junxuan Fan, Bridget S. Wade, Paul N. Pearson, Yukun Shi, Chao Qian, Ke Xue, Jiao Yang, Yujie Shi, and Muchen Lai. Graph-Optimized Graphic Correlation: An Automated Framework for Combining Stratigraphical Data. \textit{Lethaia}, 2026, 60(1): 1--16.
+  \item Han Hu$^*$, Ke Xue$^*$, Yishen Sun, Qing Zhu, Hans K. Carlson, Ruiwen Hu, Rong-Xi Tan, Chao Qian, Weigen Huang, Jizhong Zhou, Jingdong Mao, Thomas W. Crowther, Zhi-Hua Zhou, Jiabao Zhang, and Yuting Liang. Reducing the Discrepancy in Quantifying the Temperature Dependence of Global Wetland Methane Emission. \textit{Global Change Biology}, 2026, 32(2): e70748.
+  \item Tianyi Chu, Hanhui Huang, Junxuan Fan, Yiying Deng, Tao Xu, Chao Qian, Ke Xue, H. David Sheets, Michael H. Stephenson, Yukun Shi, and Xudong Hou. HORSE: Harmonize Regional and Global Stratigraphic Records through Horizon Sequencing. \textit{Palaeogeography, Palaeoclimatology, Palaeoecology}, 2025, 670: 112976.
+  \item Ren-Jian Wang$^*$, Ke Xue$^*$, Yutong Wang, Peng Yang, Haobo Fu, Qiang Fu, and Chao Qian. Diversity from Human Feedback. \textit{Frontiers of Computer Science}, 2026, 20(2): 2002320（另有NeurIPS 2023 workshop版本）。
+  \item Zhengbo Lu, Junxuan Fan, Bridget S. Wade, James Ogg, Laia Alegret, Peter M. Sadler, Michael H. Stephenson, Yukun Shi, Chao Qian, Ke Xue, and Peiyue Fang. Improving the Temporal Resolution of Middle Eocene--Late Oligocene Foraminiferal Biomagneto-Chronology: Insights from CONOP and Chronologic Significance of Biotic Events. \textit{Palaeogeography, Palaeoclimatology, Palaeoecology}, 2025, 669: 112929.
+  \item Han Hu$^*$, Chao Qian$^*$, Ke Xue$^*$, Rainer Georg Jörgensen, Marco Keiluweit, Chao Liang, Xuefeng Zhu, Ji Chen, Yishen Sun, Haowei Ni, Jixian Ding, Weigen Huang, Jingdong Mao, Rong-Xi Tan, Jizhong Zhou, Thomas W. Crowther, Zhi-Hua Zhou, Jiabao Zhang, and Yuting Liang. Reducing the Uncertainty in Estimating Soil Microbial Derived Carbon Storage. \textit{Proceedings of the National Academy of Sciences}, 2024, 121(35): e2401916121.
+  \item Ke Xue, Yutong Wang, Cong Guan, Lei Yuan, Haobo Fu, Qiang Fu, Chao Qian, and Yang Yu. Heterogeneous Multi-Agent Zero-Shot Coordination by Coevolution. \textit{IEEE Transactions on Evolutionary Computation}, 2025, 29(5): 2229--2243.
+  \item Cong Guan, Feng Chen, Ke Xue, Chunpeng Fan, Lichao Zhang, Ziqian Zhang, Pengyao Zhao, Zongzhang Zhang, Chao Qian, Lei Yuan, Yang Yu. One by One, Continual Coordinating with Humans via Hyper-Teammate Identification. \textit{Transactions on Machine Learning Research}, 2024.
+  \item Cong Guan, Ke Xue, Chunpeng Fan, Feng Chen, Lei Yuan, Chao Qian, and Yang Yu. Open and Real-World Human-AI Coordination by Heterogeneous Training with Communication. \textit{Frontiers of Computer Science}, 2025, 19(4): 194314.
+\end{cvbullet}
+
+\textit{会议论文}
+\begin{cvbullet}
+  \item Haopu Shang, Ziyu Nie, Ke Xue, and Chao Qian. Scaling Bayesian Optimization to High-Dimension via Pairwise-Relation-Based Decomposition. \textit{PPSN}, 2026.
+  \item Ming Chen, Sheng Tang, Rong-Xi Tan, Ziniu Li, Jiacheng Chen, Ke Xue$^\dagger$, and Chao Qian. Beyond Token-level Supervision: Unlocking the Potential of Decoding-based Regression via Reinforcement Learning. \textit{ICML}, 2026.
+  \item Ruo-Tong Chen, Ke Xue, Chengrui Gao, Yunqi Shi, Tian Xu, Peng Xie, Siyuan Xu, Mingxuan Yuan, Chao Qian, and Zhi-Hua Zhou. How Can Reinforcement Learning Achieve Expert-level Placement? \textit{DAC}, 2026.
+  \item Peng Xie, Ke Xue, Yunqi Shi, Ruo-Tong Chen, Chengrui Gao, Siyuan Xu, Chenjian Ding, Mingxuan Yuan, and Chao Qian. FlowPlace: Flow Matching for Chip Placement. \textit{DAC}, 2026.
+  \item Chengrui Gao, Yunqi Shi, Ke Xue$^\dagger$, Ruo-Tong Chen, Siyuan Xu, Mingxuan Yuan, Chao Qian, and Zhi-Hua Zhou. Expertise Can Be Helpful for Reinforcement Learning-based Macro Placement. \textit{ICLR}, 2026.
+  \item Chen Lu, Ke Xue$^\dagger$, Ruo-Tong Chen, Yunqi Shi, Siyuan Xu, Mingxuan Yuan, Chao Qian, and Zhi-Hua Zhou. Dynamic Algorithm Configuration for Global Placement. \textit{DATE}, 2026.
+  \item Ruo-Tong Chen, Chengrui Gao, Siyuan Xu, Ke Xue, Yunqi Shi, Xi Lin, Mingxuan Yuan, Chao Qian, and Zhi-Hua Zhou. Timing-driven Detailed Placement via TimingMask-guided Path-level Optimization. \textit{DATE}, 2026.
+  \item Wanqi Ren, Chengrui Gao, Yunqi Shi, Mingzhou Fan, Siyuan Xu, Ke Xue, Chenjian Ding, Mingxuan Yuan, and Chao Qian. Reinforcement Learning for Hybrid Bonding Terminal Legalization in 3D ICs. \textit{DATE}, 2026（Extended Abstract）。
+  \item Chen Lu, Ke Xue$^\dagger$, Lei Yuan, Yao Wang, Yaoyuan Wang, Sheng Fu, and Chao Qian. Sequential Multi-Agent Dynamic Algorithm Configuration. \textit{NeurIPS}, 2025.
+  \item Yawen Zhou, Ke Xue, and Chao Qian. MGDA/D: A Multiple Gradient Descent Algorithm Based on Decomposition. \textit{GECCO}, 2025（poster）。
+  \item Rong-Xi Tan, Ming Chen, Ke Xue$^\dagger$, Yao Wang, Yaoyuan Wang, Sheng Fu, and Chao Qian. Towards Universal Offline Black-Box Optimization via Learning Language Model Embeddings. \textit{ICML}, 2025.
+  \item Chengrui Gao, Haopu Shang, Ke Xue, and Chao Qian. Neural Solver Selection for Combinatorial Optimization. \textit{ICML}, 2025.
+  \item Lei Song, Chenxiao Gao, Ke Xue, Chenyang Wu, Dong Li, Jianye Hao, Zongzhang Zhang, and Chao Qian. Reinforced In-Context Black-Box Optimization. \textit{IJCAI}, 2025.
+  \item Yunqi Shi, Xi Lin, Siyuan Xu, Shixiong Kai, Ke Xue, Mingxuan Yuan, Chao Qian, and Zhi-Hua Zhou. ReMaP: Macro Placement by Recursively Prototyping and Periphery-Guided Relocating. \textit{DAC}, 2025.
+  \item Rong-Xi Tan, Ke Xue, Shen-Huan Lyu, Haopu Shang, Yao Wang, Yaoyuan Wang, Sheng Fu, and Chao Qian. Offline Model-Based Optimization by Learning to Rank. \textit{ICLR}, 2025.
+  \item Erlong Liu, Yu-Chang Wu, Xiaobin Huang, Chengrui Gao, Ren-Jian Wang, Ke Xue, and Chao Qian. Pareto Set Learning for Multi-Objective Reinforcement Learning. \textit{AAAI}, 2025（Oral）。
+  \item Yunqi Shi, Siyuan Xu, Shixiong Kai, Xi Lin, Ke Xue, Mingxuan Yuan, and Chao Qian. Timing-Driven Global Placement by Efficient Critical Path Extraction. \textit{DATE}, 2025。\textbf{最佳论文奖。}
+  \item Ke Xue, Ruo-Tong Chen, Xi Lin, Yunqi Shi, Shixiong Kai, Siyuan Xu, and Chao Qian. Reinforcement Learning Policy as Macro Regulator Rather than Macro Placer. \textit{NeurIPS}, 2024.
+  \item Shukuan Wang$^*$, Ke Xue$^*$, Lei Song, Xiaobin Huang, and Chao Qian. Monte Carlo Tree Search based Space Transfer for Black Box Optimization. \textit{NeurIPS}, 2024（Spotlight）。
+  \item Ke Xue$^*$, Rong-Xi Tan$^*$, Xiaobin Huang, and Chao Qian. Offline Multi-Objective Optimization. \textit{ICML}, 2024.
+  \item Ren-Jian Wang, Ke Xue, Cong Guan, and Chao Qian. Quality-Diversity with Limited Resources. \textit{ICML}, 2024.
+  \item Chao Qian, Ke Xue, and Ren-Jian Wang. Quality-Diversity Algorithms Can Provably Be Helpful for Optimization. \textit{IJCAI}, 2024.
+  \item Chengrui Gao, Haopu Shang, Ke Xue, Dong Li, and Chao Qian. Towards Generalizable Neural Solvers for Vehicle Routing Problems via Ensemble with Transferrable Local Policy. \textit{IJCAI}, 2024.
+  \item Ke Xue$^*$, Xi Lin$^*$, Yunqi Shi, Shixiong Kai, Siyuan Xu, and Chao Qian. Escaping Local Optima in Global Placement. \textit{DAC}, 2024（Work-in-Progress poster）。
+  \item Ke Xue$^*$, Ren-Jian Wang$^*$, Pengyi Li, Dong Li, Jianye Hao, and Chao Qian. Sample-Efficient Quality-Diversity by Cooperative Coevolution. \textit{ICLR}, 2024（Spotlight）。
+  \item Xiaobin Huang, Lei Song, Ke Xue, and Chao Qian. Stochastic Bayesian Optimization with Unknown Continuous Context Distribution via Kernel Density Estimation. \textit{AAAI}, 2024.
+  \item Yunqi Shi, Ke Xue, Lei Song, and Chao Qian. Macro Placement by Wire-Mask-Guided Black-Box Optimization. \textit{NeurIPS}, 2023（Spotlight；第21届ACM SIGEVO Humies铜奖）。
+  \item Ren-Jian Wang, Ke Xue, Haopu Shang, Chao Qian, Haobo Fu, and Qiang Fu. Multi-objective Optimization-based Selection for Quality-Diversity by Non-surrounded-dominated Sorting. \textit{IJCAI}, 2023.
+  \item Ziqian Zhang, Lei Yuan, Lihe Li, Ke Xue, Chengxing Jia, Cong Guan, Chao Qian, and Yang Yu. Fast teammate adaptation in the presence of sudden policy change. \textit{UAI}, 2023.
+  \item Lei Yuan, Zi-Qian Zhang, Ke Xue, Hao Yin, Feng Chen, Cong Guan, Li-He Li, Chao Qian, and Yang Yu. Robust multi-agent coordination via evolutionary generation of auxiliary adversarial attackers. \textit{AAAI}, 2023（Oral）。
+  \item Ke Xue$^*$, Jiacheng Xu$^*$, Lei Yuan, Miqing Li, Chao Qian, Zongzhang Zhang, and Yang Yu. Multi-Agent Dynamic Algorithm Configuration. \textit{NeurIPS}, 2022（Spotlight）。
+  \item Lei Song$^*$, Ke Xue$^*$, Xiaobin Huang, and Chao Qian. Monte Carlo Tree Search based Variable Selection for High Dimensional Bayesian Optimization. \textit{NeurIPS}, 2022（Spotlight）。
+  \item Yutong Wang$^*$, Ke Xue$^*$, and Chao Qian. Evolutionary Diversity Optimization with Clustering-based Selection for Reinforcement Learning. \textit{ICLR}, 2022.
+  \item Ke Xue, Chao Qian, Ling Xu, and Xu-Dong Fei. Evolutionary Gradient Descent for Non-convex Optimization. \textit{IJCAI}, 2021.
+  \item Chao Qian, Hang Xiong, and Ke Xue. Bayesian Optimization using Pseudo-Points. \textit{IJCAI}, 2020.
+\end{cvbullet}
+
+\cvsection{学术服务}
+\begin{cvbullet}
+  \item \textbf{领域主席/高级程序委员会委员：}AAAI Conference on Artificial Intelligence（AAAI）。
+  \item \textbf{审稿人/程序委员会委员：}ICML、NeurIPS、ICLR、AAAI、ECAI、AutoML等。
+  \item \textbf{期刊审稿人：}\textit{SCIENCE CHINA Information Sciences}、\textit{IEEE TPAMI}、\textit{IEEE TEvC}、\textit{IEEE TETCI}、\textit{Swarm and Evolutionary Computation}、\textit{Frontiers of Computer Science}等。
+\end{cvbullet}
+
+\cvsection{奖励与荣誉}
+\begin{cvbullet}
+  \item DATE 2025最佳论文奖（与侍昀琦、许思源、开昰雄、林熙、袁明轩、钱超合作），2025年。
+  \item 百度奖学金全球二十强提名，2025年。
+  \item 中国科协青年人才托举工程博士生专项计划，2024年。
+  \item 国家自然科学基金博士生项目，2024年。
+  \item 国家奖学金，2024年。
+  \item 第21届ACM SIGEVO Humies（Human Competitive Results）铜奖（与侍昀琦、宋磊、钱超合作），2024年。
+  \item 国家奖学金，2021年。
+\end{cvbullet}
+
+\end{document}
